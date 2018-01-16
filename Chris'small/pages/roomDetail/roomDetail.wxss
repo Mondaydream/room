@@ -1,0 +1,255 @@
+/* pages/roomDetail/roomDetail.wxss */
+
+.header{
+  height: 400rpx;
+  width: 100%;
+  position: relative;
+}
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+.header .numberImage{
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  width: 80rpx;
+  height: 80rpx;
+  background: #444C5B;
+  z-index: 1;
+  opacity: 0.75;
+}
+.header .numberImage .text{
+  margin-top: 20rpx;
+  color: white;
+  
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.title{
+  position: relative;
+  top: 18rpx;
+  left: 20rpx;
+  color: #444C5B;
+}
+.roomPrice{
+  position: relative;
+  display: flex;
+  top: 20rpx;
+  left: 20rpx;
+  height: 50rpx;
+}
+
+.roomPrice .price{
+  flex: 1;
+  color: #2FE3C3;
+  width: 100rpx;
+  font-size: 35rpx;
+}
+.roomPrice .priceTag{
+  flex: 4;
+  color: #2FE3C3;
+ 
+}
+.roomPrice  .tag{
+   position: absolute;
+   top: 7rpx;
+  
+ 
+  /* Rectangle 2 Copy 6: */
+  background: #2FE3C3;
+  border-radius: 1px;
+
+  /* 价优: */
+  font-family: .AppleSystemUIFont;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  
+}
+
+.roomTags{
+  position: relative;
+  top: 20rpx;
+  left: 20rpx;
+  right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  
+}
+
+.roomTags .tag{
+  padding: 5rpx; 
+}
+
+.roomTags .tag .tagView{
+    /* Rectangle 3: */
+  border: 0 solid #B7BDCB;
+  border-radius: 70rpx;
+  border-width: 1rpx;
+  /* 精选房源: */
+  padding: 5rpx; 
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #666D7B;
+}
+
+.roomTags .tag .estateTagView{
+ /* Rectangle 3 Copy 7: */
+  opacity: 0.3;
+  background: #CDD3E0;
+  border-radius: 70rpx;
+
+
+  /* 2011年小区: */
+  font-family: PingFangSC-Regular;
+  font-size: 13px;
+  color: #666D7B;
+}
+
+.lineView{
+  position: relative;
+  height: 1rpx;
+  
+  top: 40rpx;
+  left: 15rpx;
+  
+}
+.lineView .line{
+  margin-right: 40rpx;
+  left: 18rpx;
+  height: 100%;
+  
+  background-color: #B7BDCB;
+}
+
+.estateView{
+  position: relative;
+ 
+  top: 50rpx;
+  left: 20rpx;
+  height: 50rpx;
+  
+}
+
+.estateView .containView{
+  display: flex;
+  left: 18rpx;
+  margin-right: 40rpx;
+  height: 100%;
+  align-items:center;
+}
+
+.estateView .containView .estateTitle{
+  /* 凯旋新世界: */
+  flex: 1;
+  font-family: PingFangSC-Regular;
+  font-size: 40rpx;
+  color: #444C5B;
+}
+
+.estateView .containView .mapButton{
+  /* 查看地图: */
+  flex: 1;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #6D86B3;
+  text-align: right;
+}
+
+.estateView .containView .mapImage{
+  width: 30rpx;
+  height: 40rpx;
+}
+.leftSpace{
+  padding-left: 20rpx;
+}
+.estateView .containView .leftSpace .estatePlace{
+  /* 天河区海明路21号: */
+  font-family: PingFangSC-Regular;
+  font-size: 40rpx;
+  color: #88909F;
+}
+
+.estateTags{
+  position: relative;
+  top: 40rpx;
+  left: 20rpx;
+  right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  
+}
+
+.estateTags .tag{
+  padding: 5rpx; 
+}
+
+
+.estateTags .tag .estateTagView{
+ /* Rectangle 3 Copy 7: */
+  opacity: 0.3;
+  background: #CDD3E0;
+  border-radius: 10rpx;
+
+
+  /* 2011年小区: */
+  font-family: PingFangSC-Regular;
+  font-size: 35rpx;
+  color: #666D7B;
+}
+
+.lineViewTwo{
+  position: relative;
+  height: 1rpx;
+  
+  top: 40rpx;
+  left: 15rpx;
+  
+}
+.lineViewTwo .line{
+  margin-right: 40rpx;
+  left: 18rpx;
+  height: 100%;
+  
+  background-color: #B7BDCB;
+}
+
+.roomDes{
+  position: relative;
+  top: 50rpx;
+  left: 20rpx;
+  right: 20rpx;
+  
+}
+.roomDes .containView{
+  margin-right: 20rpx;
+  /* 凯旋新世界位于珠江新城CBD中心，由香港: */
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #88909F;
+}
+
+.float-action {
+  position: absolute;
+  bottom: 20px;
+  right: 20px; 
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px #AAA;
+  background: #2FE3C3;
+  z-index: 1;
+}
