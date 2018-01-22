@@ -112,7 +112,7 @@
 
 .index-list-item .opertionText{
   /* Rectangle 2 Copy 2: */
-border: 0 solid #2FE3C3;
+border: 0 solid #84A6E2;
 border-width: 1px;
 border-radius: 1px;
 
@@ -120,7 +120,7 @@ border-radius: 1px;
 /* 精选房源: */
 font-family: PingFangSC-Regular;
 font-size: 11px;
-color: #2FE3C3;
+color: #84A6E2;
 }
 
 .index-list-item .desc  {
@@ -133,7 +133,7 @@ color: #2FE3C3;
 
 .index-list-item .rentPrice{
   flex: 2;
-  color: #FFBC40;
+  color: #FF6953;
   font-size: 30rpx;
 }
 
@@ -152,7 +152,7 @@ color: #2FE3C3;
   height: 50px;
   border-radius: 50%;
   box-shadow: 2px 2px 10px #AAA;
-  background: #2FE3C3;
+  background: #FF6953;
   z-index: 1;
 }
 

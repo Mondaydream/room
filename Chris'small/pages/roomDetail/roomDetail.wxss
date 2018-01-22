@@ -51,13 +51,13 @@
 
 .roomPrice .price{
   flex: 1;
-  color: #2FE3C3;
+  color: #FF6953;
   width: 100rpx;
   font-size: 35rpx;
 }
 .roomPrice .priceTag{
   flex: 4;
-  color: #2FE3C3;
+  color: #FF6953;
  
 }
 .roomPrice  .tag{
@@ -66,7 +66,7 @@
   
  
   /* Rectangle 2 Copy 6: */
-  background: #2FE3C3;
+  background: #FFD048;
   border-radius: 1px;
 
   /* 价优: */
