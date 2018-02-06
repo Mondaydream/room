@@ -77,4 +77,4 @@
 </view>
  
 
-<button bindtap="add"  class="address-add">联系对方</button>
+<button bindtap="add" style='color: white' class="address-add">联系对方</button>
