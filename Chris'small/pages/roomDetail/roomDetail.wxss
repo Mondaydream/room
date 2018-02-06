@@ -227,6 +227,7 @@
   background-color: #B7BDCB;
 }
 
+
 .roomDes{
   position: relative;
   top: 50rpx;
@@ -234,7 +235,55 @@
   right: 20rpx;
   
 }
+
+.roomDes .roomUser{
+  margin-right: 20rpx; 
+  overflow: hidden;
+  
+}
+
+.roomDes .roomUser .cover {
+  float: left;
+  width: 120rpx;
+  height: 120rpx;
+  overflow: hidden;
+  border-radius:50%;
+  
+}
+.roomDes .roomUser .rightIcon {
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.roomDes .roomUser .content {
+  margin-left: 140rpx;
+  height: 120rpx;
+  position: relative;
+}
+
+.roomDes .roomUser .content .title{
+  position: absolute;
+  font-size: 40rpx;
+  height: 60rpx;
+  top: 0rpx;
+  left: 0rpx;
+  overflow: hidden;
+  color: #444C5B;
+}
+.roomDes .roomUser .content .owerName{
+  position: absolute;
+  font-size: 30rpx;
+  height: 30rpx;
+  bottom:20rpx; 
+  color: #88909F;
+  left: 0rpx;
+}
+
 .roomDes .containView{
+  margin-top: 20rpx;
   margin-right: 20rpx;
   /* 凯旋新世界位于珠江新城CBD中心，由香港: */
   font-family: PingFangSC-Regular;
@@ -252,4 +301,11 @@
   box-shadow: 2px 2px 10px #AAA;
   background: #2FE3C3;
   z-index: 1;
+}
+/*添加地址按钮*/
+.address-add {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+  background: #FF6953;
 }

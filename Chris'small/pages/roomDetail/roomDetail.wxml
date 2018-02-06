@@ -30,7 +30,7 @@
    </block> 
 </view>
 
-<view class='lineView'><view class='line'></view></view>
+<!-- <view class='lineView'><view class='line'></view></view>
 
 <view class='estateView'>
  <view class='containView'>
@@ -56,11 +56,25 @@
         <text class='estateTagView'>{{item.tag}}</text>
          </view>
    </block> 
-</view>
+</view> -->
 
  <view class='lineViewTwo'><view class='line'></view></view>  
 
+
+
 <view class='roomDes'>
-  <view  class='containView'><text>凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。</text></view> 
+ <view class='roomUser'>
+    <image class='cover' src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/headImage.png'></image>
+    <image class='rightIcon' src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/Shape.png'></image>
+    <view class='content' >
+      <text class='title'>招租人想说</text>
+      <text class='owerName'>陈小姐</text>
+    </view>
+    
+  </view>
+  
+  <view  class='containView'><text>凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。</text></view> 
 </view>
  
+
+<button bindtap="add"  class="address-add">联系对方</button>
