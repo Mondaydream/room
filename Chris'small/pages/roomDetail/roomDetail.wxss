@@ -308,4 +308,5 @@
 	bottom: 0;
 	width: 100%;
   background: #FF6953;
+  border-radius: 0px;
 }

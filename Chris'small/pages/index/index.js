@@ -159,6 +159,9 @@ Page({
     console.log(phone);
     var currentStatu = e.currentTarget.dataset.statu;
     this.util(currentStatu)
+    wx.navigateTo({
+      url: '../postHouse/post',
+    })
   },
 
   binphone: function (e) {

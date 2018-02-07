@@ -24,4 +24,6 @@ page {
   text-align: center;
   padding: 10rpx 0;
 }
-
+.padding_half{
+  padding: 20rpx;
+}

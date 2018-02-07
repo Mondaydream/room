@@ -148,12 +148,16 @@ color: #84A6E2;
   position: absolute;
   bottom: 20px;
   right: 20px; 
-  width: 50px;
-  height: 50px;
+  width: 150rpx;
+  height: 150rpx;
   border-radius: 50%;
-  box-shadow: 2px 2px 10px #AAA;
-  background: #FF6953;
+  /* box-shadow: 2px 2px 10px #AAA; */
   z-index: 1;
+}
+.float-action .iCon{
+  width: 150rpx;
+  height: 150rpx;
+  object-fit:cover;
 }
 
 

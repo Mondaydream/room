@@ -1,8 +1,9 @@
 <!--index.wxml-->
- <view class="float-action" bindtap="powerDrawer" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent"> 
-</view>
-<view class="float-action" bindtap="powerDrawer" data-statu="open" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottomTwo}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent"> 
-</view>
+  <view class="float-action" bindtap="powerDrawer" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent" > 
+<image    src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_release%403x.png' class='iCon'></image>
+</view> 
+<!-- <view class="float-action" bindtap="powerDrawer" data-statu="open" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottomTwo}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent"> 
+</view> -->
 
 
   
