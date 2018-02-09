@@ -1,0 +1,29 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15rpx 0;
+  box-sizing: border-box;
+} 
+page {
+  font-family: 'microsoft yahei';
+  height: 100%;
+}
+
+/*common list*/
+.list-item {
+  position: relative;
+  overflow: hidden
+}
+
+
+.refresh-footer {
+  text-align: center;
+  padding: 10rpx 0;
+}
+.padding_half{
+  padding: 20rpx;
+}

@@ -1,0 +1,131 @@
+/* pages/postHouse/post.wxss */
+.bgView{
+  background-color: #F2F1F6;
+  width: 100%;
+  height: 1650rpx;
+}
+.bgView .image{
+  width: 100%;
+  height: 200rpx;
+}
+
+.bgView .fangyuanmingzi{
+  position: relative;
+  margin-top: 20rpx;
+  
+  width: 100%;
+  height: 150rpx;
+  background-size:auto;
+  /* background-image: url(http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/fangyuanmingzibeijingtu.png); */
+
+}
+
+.bgView .fangyuanmingziBigger{
+  position: relative;
+  margin-top: 20rpx;
+  
+  width: 100%;
+  height: 200rpx;
+  background-size:auto;
+  /* background-image: url(http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/fangyuanmingzibeijingtu.png); */
+
+}
+.bgView .fangyuanmingziUploadImage{
+  position: relative;
+  margin-top: 20rpx;
+  
+  width: 100%;
+  height: 250rpx;
+  background-size:auto;
+  /* background-image: url(http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/fangyuanmingzibeijingtu.png); */
+
+}
+
+ .left-Triangle{
+    float:left;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
+    width: 0;
+    height: 0;
+    border-top: 16rpx solid transparent;
+    border-right: 24rpx solid white;
+    border-bottom: 16rpx solid transparent;
+}
+
+.left-message{
+   position: absolute;
+    float: left;
+    left: 40rpx;
+    right: 20rpx;
+    
+    height: 100%;
+    line-height: 65rpx;
+    background-color: black;
+    border-radius: 10rpx;
+    background-color: white;
+}
+
+ .textOne{
+  position: absolute;
+  left: 20rpx;
+  font-size: 30rpx;
+  right: 10rpx;
+  color: #444C5B;
+
+}
+
+ .input-phone-view{ 
+    position: absolute;
+    left: 20rpx;
+    bottom: 20rpx;
+    right: 10rpx;
+    font: 30rpx "microsoft yahei";  
+    background: #fff;  
+    color:#CDD3E0;  
+    line-height: 30px;  
+}  
+
+ .roomTags{
+  position: absolute;
+  bottom: 0rpx;
+  left: 20rpx;
+  right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.roomTags .tag{
+  padding: 5rpx; 
+}
+
+.roomTags .tag .tagView{
+    /* Rectangle 3: */
+  border: 0 solid #B7BDCB;
+  border-radius: 70rpx;
+  border-width: 1rpx;
+  /* 精选房源: */
+  padding: 5rpx; 
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #666D7B;
+}
+
+.uploadImage{
+  background-image: url(http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/uploadImage.png);
+ background-size:contain;
+  position: absolute;
+  bottom: 10rpx;
+  left: 20rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+/*添加地址按钮*/
+.address-add {
+	position: relative;
+  margin-top: 20rpx;
+	width: 100%;
+  background: #FF6953;
+  border-radius: 0px;
+}

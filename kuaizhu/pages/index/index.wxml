@@ -1,0 +1,80 @@
+<!--index.wxml-->
+  <view class="float-action" bindtap="powerDrawer" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent" > 
+<image    src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_release%403x.png' class='iCon'></image>
+</view> 
+<!-- <view class="float-action" bindtap="powerDrawer" data-statu="open" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottomTwo}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent"> 
+</view> -->
+
+
+  
+<!--mask-->  
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view>  
+<!--content-->  
+<!--使用animation属性指定需要执行的动画-->  
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">  
+  <!--drawer content-->  
+  <view class="drawer_content">  
+     <view class="input-phone">  
+        <input  class='input-phone-view' name="phone" placeholder="填写手机号码" value="{{phone}}" bindinput="binphone"></input>  
+        </view>  
+        
+        <button bindtap="powerDrawer" class="button-hover" hover-class='none'data-statu="close"> 完成 </button> 
+  </view>  
+  
+   <!-- <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>     -->
+</view> 
+
+<view class='header'>
+    <view class='header-childText'> 
+        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_01.png' class='header-childText-image'></image>
+
+        <text class='header-childText-text'>精选房源</text>
+    </view>
+    <view class='header-childText'> 
+        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_02.png' class='header-childText-image'></image>
+
+        <text class='header-childText-text'>100%真实</text>
+    </view>
+    <view class='header-childText'> 
+        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_03.png' class='header-childText-image'></image>
+
+        <text class='header-childText-text'>业主直连</text>
+    </view>
+  
+</view>
+
+  <scroll-view class='scrollView' scroll-y="true" style="height:{{scrollHeight}}px"
+  bindscrolltolower="scrollLowerEvent">
+
+    <view >
+
+      <block wx:for="{{pageData}}" wx:key="id">
+        <view class="list-item" data-room-id="{{item.title}}" bindtap="toDetailPage">
+          <view class="index-list-item">
+            <view class="cover">
+              <image class="cover-img" src="{{item.image}}"></image>
+            </view>
+            <view class="content">
+              <view class="title">{{item.title}}</view>
+              <view class='rentTags'>{{item.rentTags}}</view>
+              <view class='opertionTags'>
+              <text class='opertionText'>{{item.opertionTags}}</text>
+              </view>
+              <view class='desc'>
+                <text class="rentPrice">¥3500/月</text>
+                <text class='rentTime'>1分钟前</text>
+              </view>
+              
+            </view>
+          </view>
+        </view>
+      </block>
+
+    </view>
+
+    <view class="refresh-footer" wx:if="{{loadingMore}}">
+      <icon type="waiting" size="30" color="{{footerIconColor}}"  />
+    </view>
+
+</scroll-view>  
+

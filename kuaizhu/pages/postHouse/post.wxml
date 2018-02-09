@@ -1,0 +1,98 @@
+<!--pages/postHouse/post.wxml-->
+<view class='bgView'>
+  <image src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/qingtigongfangyuanxinxi.png' class='image'></image>
+  <view class='fangyuanmingzi'>
+    <view class='.left-Triangle'></view>
+    <view class='left-message '>
+      <text class='textOne'>给你的房源取个名吧</text>
+      <input  class='input-phone-view' name="phone" placeholder="请填写（格式: 位置+小区+户型）" value="{{phone}}" bindinput="binphone"></input>  
+    </view>
+  </view>
+
+  <view class='fangyuanmingzi'>
+    <view class='.left-Triangle'></view>
+    <view class='left-message '>
+      <text class='textOne'>房子的出租类型</text>
+       <view class='roomTags'>
+        <view class='tag'> 
+          <text class='tagView'>整租</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>合租</text>
+         </view>
+        </view>
+    </view>
+  </view>
+
+  <view class='fangyuanmingzi'>
+    <view class='.left-Triangle'></view>
+    <view class='left-message '>
+      <text class='textOne'>你想租多少钱一个月</text>
+      <input  class='input-phone-view' name="phone" placeholder="请填写（单位: 元）" value="{{phone}}" bindinput="binphone"></input> 
+    </view>
+  </view>
+
+  <view class='fangyuanmingziBigger'>
+    <view class='.left-Triangle'></view>
+    <view class='left-message '>
+      <text class='textOne'>房子的出租类型</text>
+       <view class='roomTags'>
+        <view class='tag'> 
+          <text class='tagView'>安静</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>首租</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>单间</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>电梯房</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>近地铁</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>家具齐全</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>室友nice</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>设施完善</text>
+         </view>
+         <view class='tag'> 
+          <text class='tagView'>清新</text>
+         </view>
+        </view>
+    </view>
+  </view>
+
+  <view class='fangyuanmingzi'>
+    <view class='.left-Triangle'></view>
+    <view class='left-message '>
+      <text class='textOne'>简单介绍一下你的房子</text>
+      <input  class='input-phone-view' name="phone" placeholder="请填写" value="{{phone}}" bindinput="binphone"></input> 
+    </view>
+  </view>
+  <view class='fangyuanmingziUploadImage'>
+    <view class='.left-Triangle'></view>
+    <view class='left-message '>
+      <text class='textOne'>上传几张照片提升曝光量吧</text>
+      <button class='uploadImage'></button> 
+    </view>
+  </view>
+
+  <view class='fangyuanmingzi'>
+    <view class='.left-Triangle'></view>
+    <view class='left-message '>
+      <text class='textOne'>留下你的电话，以便租客联系</text>
+      <input  class='input-phone-view' name="phone" placeholder="请填写（单位: 元）" value="{{phone}}" bindinput="binphone"></input> 
+    </view>
+  </view>
+
+
+<button bindtap="add" style='color: white' class="address-add">提交</button>
+ 
+</view>
+ 
