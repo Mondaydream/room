@@ -75,11 +75,27 @@
       <input  class='input-phone-view' name="phone" placeholder="请填写" value="{{phone}}" bindinput="binphone"></input> 
     </view>
   </view>
+  
   <view class='fangyuanmingziUploadImage'>
     <view class='.left-Triangle'></view>
     <view class='left-message '>
+      
       <text class='textOne'>上传几张照片提升曝光量吧</text>
-      <button class='uploadImage'></button> 
+      <view class='uploadContainView'>
+      <block wx:for="{{pictures}}" wx:for-index="index">
+      <image wx:if="{{item.url != true}}" class='selectedImage' src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+      <block wx:if="{{item.url == true}}"> 
+       <view class='tag'>
+        <button bindtap="bindViewTap"     class='uploadImage'></button>
+      
+       </view>
+           
+        </block>     
+        
+   </block> 
+      </view>
+       
+     
     </view>
   </view>
 
