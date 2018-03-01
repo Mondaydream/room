@@ -120,6 +120,18 @@
   color: #666D7B;
 }
 
+.selectedType{
+    /* Rectangle 3: */
+  border: 0 solid #FF6953;
+  border-radius: 70rpx;
+  border-width: 1rpx;
+  /* 精选房源: */
+  padding: 5rpx; 
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #FF6953;
+}
+
 .uploadContainView{
   position: relative;
   bottom: 0rpx;

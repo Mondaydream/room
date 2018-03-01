@@ -1,4 +1,6 @@
-var Util = require( '../../utils/util.js' );
+var Util = require( '../../utils/util.js' )
+
+var uploadFn = require( '../../utils/upload.js' )
 
 // pages/postHouse/post.js
 Page({
@@ -12,6 +14,50 @@ Page({
       
     ],
     seletedList:[],
+    roomTypes:[
+      {
+        "type":"整租",
+        "select":1,
+      },
+      {
+        "type":"合租",
+        "select":2,
+      },
+    ],
+    roomTypeSelected:0,
+
+    roomTags:[
+        {
+          "tag":"安静",
+          "select":false,
+        },
+        {
+          "tag": "首租",
+          "select":false,
+        }, {
+          "tag": "单间",
+          "select":false,
+        }, {
+          "tag": "电梯房",
+          "select":false,
+        }, {
+          "tag": "近地铁",
+          "select":false,
+        }, {
+          "tag": "家具齐全",
+          "select":false,
+        }, {
+          "tag": "室友nice",
+          "select":false,
+        }, {
+          "tag": "设施完善",
+          "select":false,
+        }, {
+          "tag": "清新",
+          "select":false,
+        },
+      ],
+
   },
 
   /**
@@ -69,6 +115,23 @@ Page({
   onShareAppMessage: function () {
   
   },
+
+  //选择整租还是合租
+  chooseCatalog: function (data) {
+    var that = this;
+    that.setData({//把选中值放入判断值
+      roomTypeSelected: data.currentTarget.dataset.select
+    })
+    },
+    //选择tag
+  chooseTag: function (data) {
+    var that = this;
+    that.data.roomTags[data.currentTarget.dataset.select].select = !that.data.roomTags[data.currentTarget.dataset.select].select
+    that.setData({//把选中值放入判断值
+      roomTags: that.data.roomTags
+    })
+  },
+
   bindViewTap: function () {
     var that = this;
     
@@ -90,6 +153,15 @@ Page({
           pictures: pictures,
           seletedList : tempFilePaths
         })
+        // 获取文件路径
+        var filePath = res.tempFilePaths[0];
+
+        // 获取文件名
+        var fileName = filePath.match(/(wxfile:\/\/)(.+)/)
+        // fileName = fileName[2]
+
+        // 文件上传cos
+        uploadFn(filePath, "haodela")
       },
       fail: function (res) {
         // fail
@@ -97,6 +169,9 @@ Page({
       complete: function (res) {
         // complete
       }
+
+      
+
     })
   },
   previewImage: function (e) {
@@ -109,37 +184,6 @@ Page({
   },
   add: function () {
     
-    wx.request({
-      url: "http://op.juhe.cn/onebox/weather/query",
-      header: {
-        //请求头和ajax写法一样
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      method: "POST",
-      data: Util.json2Form({ cityname: "北京", key: "1430ec127e097e1113259c5e1be1ba70" }),
-      complete: function (res) {
-
-        wx.showToast({
-          title: '成功',
-          icon: 'success',
-          duration: 2000
-        })
-
-        that.setData({
-          red: 'red',
-          city_name: res.data.result.data.realtime.city_name,
-          date: res.data.result.data.realtime.date,
-          info: res.data.result.data.realtime.weather.info,
-        });
-        if (res == null || res.data == null) {
-          console.error('网络请求失败');
-          return;
-        }
-
-        setTimeout(function () {
-          wx.hideToast()
-        }, 2000)
-      }
-    })
+   
   }
 })

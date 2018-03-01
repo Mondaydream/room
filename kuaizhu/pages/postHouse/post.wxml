@@ -14,13 +14,16 @@
     <view class='left-message '>
       <text class='textOne'>房子的出租类型</text>
        <view class='roomTags'>
-        <view class='tag'> 
-          <text class='tagView'>整租</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>合租</text>
-         </view>
-        </view>
+         
+          
+          <block wx:for="{{roomTypes}}">
+          <view class='tag'> 
+            <text data-select="{{item.select}}" class="{{item.select == roomTypeSelected ? 'selectedType':'tagView'}} catalog_item" bindtap="chooseCatalog">{{item.type}}</text>
+            </view>
+          </block>
+
+         </view> 
+       
     </view>
   </view>
 
@@ -37,33 +40,11 @@
     <view class='left-message '>
       <text class='textOne'>房子的出租类型</text>
        <view class='roomTags'>
-        <view class='tag'> 
-          <text class='tagView'>安静</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>首租</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>单间</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>电梯房</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>近地铁</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>家具齐全</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>室友nice</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>设施完善</text>
-         </view>
-         <view class='tag'> 
-          <text class='tagView'>清新</text>
-         </view>
+        <block wx:for="{{roomTags}}" wx:for-index="index">
+          <view class='tag'> 
+            <text data-select="{{index}}" class="{{item.select ?'selectedType':'tagView'}} " bindtap="chooseTag">{{item.tag}}</text>
+            </view>
+          </block>
         </view>
     </view>
   </view>
