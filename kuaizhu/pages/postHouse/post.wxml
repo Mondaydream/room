@@ -64,11 +64,12 @@
       <text class='textOne'>上传几张照片提升曝光量吧</text>
       <view class='uploadContainView'>
       <block wx:for="{{pictures}}" wx:for-index="index">
+      <view class='tag'>
       <image wx:if="{{item.url != true}}" class='selectedImage' src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+      </view>
       <block wx:if="{{item.url == true}}"> 
        <view class='tag'>
-        <button bindtap="bindViewTap"     class='uploadImage'></button>
-      
+        <button bindtap="bindViewTap" class='uploadImage'></button>
        </view>
            
         </block>     

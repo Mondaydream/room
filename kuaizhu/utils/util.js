@@ -27,7 +27,16 @@ function json2Form(json) {
   return str.join("&");
 }
 
+function isEmptyObject(e) {
+  var t;
+  for (t in e)
+    return !1;
+  return !0
+}
+
+
 module.exports = {
   formatTime: formatTime,
   json2Form: json2Form,
+  isEmptyObject: isEmptyObject,
 }

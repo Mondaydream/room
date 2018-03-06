@@ -2,6 +2,9 @@ var Util = require( '../../utils/util.js' )
 
 var uploadFn = require( '../../utils/upload.js' )
 
+var imageURLHead = "https://kuaizhu-1255976527.cos.ap-guangzhou.myqcloud.com/"
+
+
 // pages/postHouse/post.js
 Page({
 
@@ -10,9 +13,10 @@ Page({
    */
   data: {
     pictures:[
-       { url: true },
+       { "url": true },
       
     ],
+    uploadedPics:[],
     seletedList:[],
     roomTypes:[
       {
@@ -57,6 +61,17 @@ Page({
           "select":false,
         },
       ],
+    postData:{
+      "roomID":"",
+      "wxUid":"",
+      "title":"",
+      "RentalProperties":"",
+      "rentPrice":"",
+      "roomDescription":"",
+      "coverImgUrl":"",
+      "images":"",
+      "phoneNumber":"",
+    },
 
   },
 
@@ -153,15 +168,8 @@ Page({
           pictures: pictures,
           seletedList : tempFilePaths
         })
-        // 获取文件路径
-        var filePath = res.tempFilePaths[0];
-
-        // 获取文件名
-        var fileName = filePath.match(/(wxfile:\/\/)(.+)/)
-        // fileName = fileName[2]
-
-        // 文件上传cos
-        uploadFn(filePath, "haodela")
+       
+        
       },
       fail: function (res) {
         // fail
@@ -183,7 +191,37 @@ Page({
     })
   },
   add: function () {
-    
-   
+    var that = this
+    var length = that.data.pictures.length - 1
+    console.log("点击了上传房源",length)
+    for(var i = 0;i < length;i++){
+        var item = that.data.pictures[i]
+        var filePath = item
+        console.log("url:",filePath)
+        var fileName = filePath.match(/(wxfile:\/\/)(.+)/)
+        fileName = fileName[2]
+        wx.showLoading({
+          title: '正在上传房源信息',
+        })
+        uploadFn(filePath, fileName, function (res) {
+          //res就是我们请求接口返回的数据
+          console.log("上传图片成功：",res)
+          var fileURL = imageURLHead + fileName
+          that.data.uploadedPics.push(fileURL)
+          if (that.data.uploadedPics.length == that.data.pictures.length - 1){
+              that.postHouseInfo()
+          }
+        }, function () {
+          wx.showToast({
+            title: '上传图片失败',
+          })
+        })
+    }
+  },
+  postHouseInfo: function () {
+    wx.hideLoading()
+    wx.navigateBack()
   }
 })
+ 
+  

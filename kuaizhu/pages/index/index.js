@@ -2,6 +2,7 @@
 //获取应用实例
 var app = getApp()
 var Loger = require("../../utils/Loger.js");
+var utils = require("../../utils/util.js");
 
 Page({
   data: {
@@ -154,14 +155,15 @@ Page({
   },
 
   powerDrawer: function (e) {
+    var that = this
     console.log('点击了弹窗按钮');
     var phone = this.data.phone;
     console.log(phone);
     var currentStatu = e.currentTarget.dataset.statu;
-    this.util(currentStatu)
-    wx.navigateTo({
-      url: '../postHouse/post',
-    })
+   
+    that.userinfor();
+
+    
   },
 
   binphone: function (e) {
@@ -221,8 +223,88 @@ Page({
   toDetailPage:function(e){
     var id = e.currentTarget.dataset.roomId;
     console.log(id);
+    
     wx.navigateTo({
       url: '../roomDetail/roomDetail?roomId='+id,
     })
+  },
+  
+  checkSettingStatu:function(cb) {
+    //授权处理
+    var that = this;
+    // 判断是否是第一次授权，非第一次授权且授权失败则进行提醒
+    wx.getSetting({
+      success: function success(res) {
+        var authSetting = res.authSetting;
+        if (utils.isEmptyObject(authSetting)) {
+          console.log('首次授权');
+        } else {
+          console.log('不是第一次授权', authSetting);
+          // 没有授权的提醒
+          if (authSetting['scope.userInfo'] === false) {
+            wx.showModal({
+              title: '用户未授权',
+              content: '如需正常使用此小程序功能，请您按确定并在设置页面授权用户信息',
+              showCancel: false,
+              success: function (res) {
+                // 此处为了用于 Android 系统区分点击蒙层关闭还是点击取消按钮关闭省去了res.confirm，res.cancel判断
+                // 点击蒙层同样触发开启设置
+                wx.openSetting({
+                  success: function success(res) {
+                    if (res.authSetting['scope.userInfo'] === false) {
+                      that.checkSettingStatu(cb);
+                    } else {
+                      that.userinfor();
+                    }
+                  }
+                });
+              }
+            })
+          }
+        }
+      }
+    });
+  },
+  userinfor: function(){
+    var that = this
+    //获取用户信息
+    wx.login({
+      success: function (res) {
+        var code = res.code;
+        if (res.code) {
+          wx.getUserInfo({
+            fail: function (res) {
+             that.checkSettingStatu();
+            },
+            success: function (data) {
+              var encryptedData = data.encryptedData;
+              var iv = data.iv;
+              wx.request({
+                url: 'XXXX',
+                data: {
+                  "json": JSON.stringify({
+                    "type": "small_wechat_new",
+                    "code": code,
+                    "encryptedData": encryptedData,
+                    "iv": iv
+                  })
+                },
+                method: 'POST',
+                header: {
+                  'content-type': 'application/x-www-form-urlencoded'
+                },
+                success: function (res) {
+                  //wx.setStorageSync('user_id', res.data.data.user_id);
+                  //wx.setStorageSync('token', res.data.data.token);
+                  //wx.setStorageSync('avatar', res.data.data.avatar);
+                  //wx.setStorageSync('nickname', res.data.data.nickname);
+                }
+              })
+            }
+          })
+        }
+      }
+    })
   }
+  
 })
