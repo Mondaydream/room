@@ -252,7 +252,7 @@ Page({
                 wx.openSetting({
                   success: function success(res) {
                     if (res.authSetting['scope.userInfo'] === false) {
-                      that.checkSettingStatu(cb);
+                      // that.checkSettingStatu(cb);
                     } else {
                       that.userinfor();
                     }
@@ -279,26 +279,8 @@ Page({
             success: function (data) {
               var encryptedData = data.encryptedData;
               var iv = data.iv;
-              wx.request({
-                url: 'XXXX',
-                data: {
-                  "json": JSON.stringify({
-                    "type": "small_wechat_new",
-                    "code": code,
-                    "encryptedData": encryptedData,
-                    "iv": iv
-                  })
-                },
-                method: 'POST',
-                header: {
-                  'content-type': 'application/x-www-form-urlencoded'
-                },
-                success: function (res) {
-                  //wx.setStorageSync('user_id', res.data.data.user_id);
-                  //wx.setStorageSync('token', res.data.data.token);
-                  //wx.setStorageSync('avatar', res.data.data.avatar);
-                  //wx.setStorageSync('nickname', res.data.data.nickname);
-                }
+              wx.navigateTo({
+                url: '../postHouse/post',
               })
             }
           })
@@ -306,5 +288,4 @@ Page({
       }
     })
   }
-  
 })
