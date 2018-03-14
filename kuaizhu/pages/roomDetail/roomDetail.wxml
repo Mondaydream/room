@@ -3,9 +3,9 @@
 
 <view class='header'> 
     <swiper class="swiper" indicator-dots="true" current="{{swiperCurrent}}" bindchange="swiperChange" autoplay="true" interval="2000" duration="500" >    
-        <block wx:for="{{movies}}" wx:for-index="index">    
+        <block wx:for="{{roomData.images}}" wx:for-index="index">    
          <swiper-item>    
-           <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>    
+           <image src="{{item}}" class="slide-image" mode="aspectFill"/>    
           </swiper-item> 
           </block>    
       </swiper> 
@@ -14,18 +14,18 @@
   </view>
 </view>
 
-<text class='title'>老台北---★捷運5分鐘雙人套房★</text>
+<text class='title'>{{roomData.title}}</text>
 <view class='roomPrice'>
-  <text class='price'>¥3600/月</text>
+  <text class='price'>¥{{roomData.rentPrice}}/月</text>
   <view class='priceTag'>
     <text class='tag'>价格优</text>
   </view>
 </view>
 
 <view class='roomTags'>
-   <block wx:for="{{tags}}" wx:for-index="index">    
+   <block wx:for="{{roomData.RentalProperties}}" wx:for-index="index">    
         <view class='tag'> 
-        <text class='tagView'>{{item.tag}}</text>
+        <text class='tagView'>{{item}}</text>
          </view>
    </block> 
 </view>
@@ -73,7 +73,7 @@
     
   </view>
   
-  <view  class='containView'><text>凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。凯旋新世界位于珠江新城CBD中心，由香港新世界集团斥资打造，是新世界中国地产落子华南的品牌旗舰项目。它南望珠江，北临珠江公园，采用“元宝型”围合结构，内拥4.8万平方米的私家园林。容积率仅2.9，集高档住宅“广粤尊府”、时尚商圈“广粤天地”、国际公寓“广粤公馆”、以及华南顶级社交平台“广粤会”为一体，是华南首个中心文化交融的国际品质生活区，是珠江新城罕见的大型低密度社区。</text></view> 
+  <view  class='containView'><text>{{roomData.roomDescription}}</text></view> 
 </view>
  
 

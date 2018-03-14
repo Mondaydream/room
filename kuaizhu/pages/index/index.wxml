@@ -49,22 +49,22 @@
     <view >
 
       <block wx:for="{{pageData}}" wx:key="id">
-        <view class="list-item" data-room-id="{{item.title}}" bindtap="toDetailPage">
+        <view class="list-item" data-room-id="{{item.roomId}}" bindtap="toDetailPage">
           <view class="index-list-item">
             <view class="cover">
-              <image class="cover-img" src="{{item.image}}"></image>
+              <image class="cover-img" src="{{item.coverImgUrl}}"></image>
             </view>
             <view class="content">
               <view class="title">{{item.title}}</view>
-              <view class='rentTags'>{{item.rentTags}}</view>
+              <view class='rentTags'>{{item.RentalProperties}}</view>
               <view class='opertionTags'>
-              <text class='opertionText'>{{item.opertionTags}}</text>
+              <text class='opertionText'>精选房源</text>
               </view>
               <view class='desc'>
-                <text class="rentPrice">¥3500/月</text>
-                <text class='rentTime'>1分钟前</text>
+                <text class="rentPrice">¥{{item.rentPrice}}/月</text>
+                <text class='rentTime'>{{item.releseTime}}</text>
               </view>
-              
+
             </view>
           </view>
         </view>

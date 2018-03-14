@@ -62,15 +62,15 @@ Page({
         },
       ],
     postData:{
-      "roomID":"",
-      "wxUid":"",
       "title":"",
-      "RentalProperties":"",
+      "RentalProperties":[],
       "rentPrice":"",
       "roomDescription":"",
       "coverImgUrl":"",
-      "images":"",
+      "images":[],
       "phoneNumber":"",
+      "releseTime":"",
+      "city":"广州",
     },
 
   },
@@ -79,7 +79,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.getUserInfo({
+     
+      success: function (data) {
+        var encryptedData = data.encryptedData;
+        var iv = data.iv;
+
+        var userInfo = data.userInfo
+        var nickName = userInfo.nickName
+        var avatarUrl = userInfo.avatarUrl
+        var gender = userInfo.gender //性别 0：未知、1：男、2：女 
+        var province = userInfo.province
+        var city = userInfo.city
+        var country = userInfo.country
+
+        console.log("这个字典：",userInfo)
+      }
+    })
   },
 
   /**
@@ -129,6 +145,41 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  bindRoomTitle:function(e){
+    var that = this
+    that.data.postData.title = e.detail.value
+    this.setData({
+      postData:that.data.postData
+    })
+    
+  },
+
+  bindPrice:function(e){
+    var that = this
+    that.data.postData.rentPrice = e.detail.value
+    this.setData({
+      postData:that.data.postData
+    })
+  },
+
+  bindDes : function(e){
+    var that = this
+    that.data.postData.roomDescription = e.detail.value
+    this.setData({
+      postData: that.data.postData
+    })
+  },
+
+  binphone : function(e){
+    var that = this
+    var that = this
+    that.data.postData.phoneNumber = e.detail.value
+    this.setData({
+      postData: that.data.postData
+    })
+    console.log("电话号码", that.data.postData)
   },
 
   //选择整租还是合租
@@ -219,8 +270,61 @@ Page({
     }
   },
   postHouseInfo: function () {
-    wx.hideLoading()
-    wx.navigateBack()
+    var that = this
+    var RentalProperties = []
+    if (that.data.roomTypeSelected == 1){
+      RentalProperties.push("整租")
+    }
+    if (that.data.roomTypeSelected == 2){
+      RentalProperties.push("合租")
+    }
+    console.log("roomTags:", that.data.roomTags)
+   
+
+    for (var i = 0; i < that.data.roomTags.length;i++){
+      var item = that.data.roomTags[i]
+      if (item.select == true) {
+        RentalProperties.push(item.tag)
+      }
+    }
+
+    that.data.postData.RentalProperties = RentalProperties
+   
+    that.data.postData.images = that.data.uploadedPics
+
+    that.data.postData.coverImgUrl = that.data.uploadedPics[0]
+    
+    that.data.postData.releseTime = Util.formatTime(new Date())
+
+    that.setData({
+      postData: that.data.postData
+    })
+    
+    var jsonStr = JSON.stringify(that.data.postData)
+    console.log("上传的json字符串:",jsonStr)
+    wx.request({
+      url: "https://www.kzroom.club/uploadRoom",
+      header: {
+        "Content-Type": "application/json"
+      },
+      method: "POST",
+      
+      data:jsonStr,
+      complete: function (res) {
+        that.setData({
+          
+        });
+        if (res == null || res.data == null) {
+          console.error('网络请求失败');
+          return;
+        }else{
+
+          console.log("上传成功:",res);
+          wx.hideLoading()
+          wx.navigateBack()
+        }
+      }
+    })  
   }
 })
  

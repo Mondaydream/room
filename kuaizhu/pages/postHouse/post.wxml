@@ -5,7 +5,7 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>给你的房源取个名吧</text>
-      <input  class='input-phone-view' name="phone" placeholder="请填写（格式: 位置+小区+户型）" value="{{phone}}" bindinput="binphone"></input>  
+      <input  class='input-phone-view' name="phone" placeholder="请填写（格式: 位置+小区+户型）" value="{{phone}}" bindinput="bindRoomTitle"></input>  
     </view>
   </view>
 
@@ -31,7 +31,7 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>你想租多少钱一个月</text>
-      <input  class='input-phone-view' name="phone" placeholder="请填写（单位: 元）" value="{{phone}}" bindinput="binphone"></input> 
+      <input  class='input-phone-view'  placeholder="请填写（单位: 元）"  bindinput="bindPrice"></input> 
     </view>
   </view>
 
@@ -53,7 +53,7 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>简单介绍一下你的房子</text>
-      <input  class='input-phone-view' name="phone" placeholder="请填写" value="{{phone}}" bindinput="binphone"></input> 
+      <input  class='input-phone-view'  placeholder="请填写"  bindinput="bindDes"></input> 
     </view>
   </view>
   
@@ -85,7 +85,7 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>留下你的电话，以便租客联系</text>
-      <input  class='input-phone-view' name="phone" placeholder="请填写（单位: 元）" value="{{phone}}" bindinput="binphone"></input> 
+      <input  class='input-phone-view'  placeholder="请填写（单位: 元）"  bindinput="binphone"></input> 
     </view>
   </view>
 

@@ -35,7 +35,7 @@ Page({
       { tag: '临近公园' },
 
     ],
-
+    roomData:{},
     swiperCurrent: 0,
     perCounts:0,
   },
@@ -44,14 +44,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
+    wx.request({
+      url: 'https://www.kzroom.club/v1/queryRoom?roomID=' + options.roomId,
+      success: function (res) {
+        console.log(res.data.result[0])
+        that.setData({
+          roomData : res.data.result[0],
+          perCounts: res.data.result[0].images.length,
+        })
+        
+        wx.setNavigationBarTitle({
+          title: that.data.roomData.title//页面标题为路由参数
+        })
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
       this.setData({
        
         roomId : options.roomId,
         perCounts : this.data.movies.length,
       });
-      wx.setNavigationBarTitle({
-        title: options.roomId//页面标题为路由参数
-      })
+      
       
   },
 
