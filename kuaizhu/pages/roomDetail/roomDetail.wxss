@@ -8,6 +8,7 @@
 .swiper {
   height: 400rpx;
   width: 100%;
+ 
 }
 .swiper image {
   height: 100%;
@@ -52,11 +53,10 @@
 .roomPrice .price{
   flex: 1;
   color: #FF6953;
-  width: 100rpx;
   font-size: 35rpx;
 }
 .roomPrice .priceTag{
-  flex: 4;
+  flex: 3;
   color: #FF6953;
  
 }
@@ -247,13 +247,16 @@
   width: 120rpx;
   height: 120rpx;
   overflow: hidden;
-  border-radius:50%;
+  border-radius: 50%;
+  border-color: #CDD3E0;  
+  border-style: solid; 
+  border-width: 1rpx;
   
 }
 .roomDes .roomUser .rightIcon {
   float: right;
-  width: 40rpx;
-  height: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
   overflow: hidden;
   margin-right: 20rpx;
 }

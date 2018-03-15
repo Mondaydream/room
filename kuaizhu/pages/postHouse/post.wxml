@@ -1,7 +1,7 @@
 <!--pages/postHouse/post.wxml-->
 <view class='bgView'>
   <image src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/qingtigongfangyuanxinxi.png' class='image'></image>
-  <view class='fangyuanmingzi'>
+  <view class='fristItem'>
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>给你的房源取个名吧</text>
@@ -85,7 +85,7 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>留下你的电话，以便租客联系</text>
-      <input  class='input-phone-view'  placeholder="请填写（单位: 元）"  bindinput="binphone"></input> 
+      <input  class='input-phone-view'  placeholder=""  bindinput="binphone"></input> 
     </view>
   </view>
 

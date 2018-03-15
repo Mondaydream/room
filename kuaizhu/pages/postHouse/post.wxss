@@ -19,6 +19,15 @@
 
 }
 
+.bgView .fristItem{
+  position: relative;
+  margin-top: 0rpx;
+  margin-right: 20rpx;
+  
+  /* height: 150rpx; */
+  background-size:auto;
+}
+
 .bgView .fangyuanmingziBigger{
   position: relative;
   margin-top: 40rpx;
@@ -85,7 +94,7 @@
     height: 40rpx;
     font: 30rpx "microsoft yahei";  
     background: #fff;  
-    color:#CDD3E0;  
+    color:#444C5B;  
     line-height: 30px;  
 }  
 

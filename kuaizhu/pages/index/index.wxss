@@ -29,7 +29,7 @@
   z-index: 1; 
   position:fixed; 
   top:0;
-  height: 30px;
+  height: 42px;
   width: 100%;
   background-color: #FFFFFF;
   display: flex;
@@ -38,17 +38,17 @@
 }
 .header .header-childText{
   flex: 1;
-  height: 25px;
+  height: 60rpx;
   align-self: center; 
   justify-content: center; 
 }
 .header-childText .header-childText-image{
-  width: 20px;
-  height: 20px;
+  width: 40rpx;
+  height: 40rpx;
   align-self: center; 
   display: table-cell;
  
-  padding:8px;
+  padding:30rpx;
   vertical-align: middle;
 }
 .header-childText .header-childText-text{
@@ -58,7 +58,7 @@
   
   padding:0px;
   text-align: left;
-  font-size: 14px;
+  font-size: 30rpx;
 }
 
 .scrollView{
@@ -89,7 +89,7 @@
 }
 .index-list-item .title {
   font-size: 35rpx;
-  display: inline-block;
+  font-weight:500;
   height: 60rpx;
   margin-top: 0rpx;
   overflow: hidden;
@@ -113,13 +113,13 @@
 .index-list-item .opertionText{
   /* Rectangle 2 Copy 2: */
 border: 0 solid #84A6E2;
-border-width: 1px;
-border-radius: 1px;
+border-width: 0.5rpx;
+border-radius: 1rpx;
 
 
 /* 精选房源: */
 font-family: PingFangSC-Regular;
-font-size: 11px;
+font-size: 25rpx;
 color: #84A6E2;
 }
 
