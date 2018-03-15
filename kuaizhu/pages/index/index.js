@@ -35,6 +35,7 @@ Page({
        that.setData({
          pageData:res.data.result
        })
+       console.log(res.data.result)
      },
      fail: function (err) {
        console.log(err)

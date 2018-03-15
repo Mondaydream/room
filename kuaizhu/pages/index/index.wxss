@@ -91,9 +91,13 @@
   font-size: 35rpx;
   font-weight:500;
   height: 60rpx;
+  width: 300rpx;
   margin-top: 0rpx;
+  margin-left: 0rpx;
+  margin-right: 0rpx;
   overflow: hidden;
   color: #444C5B;
+  text-align: left;
 }
 
 .index-list-item .rentTags{

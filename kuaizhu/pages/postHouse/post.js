@@ -254,13 +254,20 @@ Page({
         wx.showLoading({
           title: '正在上传房源信息',
         })
+        console.log("上传的key:",fileName)
+        var fileURL = imageURLHead + fileName
+        that.data.uploadedPics.push(fileURL)
+        that.setData({
+          uploadedPics: that.data.uploadedPics
+        })
         uploadFn(filePath, fileName, function (res) {
           //res就是我们请求接口返回的数据
           console.log("上传图片成功：",res)
-          var fileURL = imageURLHead + fileName
-          that.data.uploadedPics.push(fileURL)
+          
+          
           if (that.data.uploadedPics.length == that.data.pictures.length - 1){
               that.postHouseInfo()
+              console.log("上传成功的房源照片集合：",that.data.uploadedPics)
           }
         }, function () {
           wx.showToast({
