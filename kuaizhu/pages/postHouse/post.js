@@ -17,6 +17,7 @@ Page({
       
     ],
     uploadedPics:[],
+    tmpUploadedPics:[],
     seletedList:[],
     roomTypes:[
       {
@@ -264,8 +265,12 @@ Page({
           //res就是我们请求接口返回的数据
           console.log("上传图片成功：",res)
           
-          
-          if (that.data.uploadedPics.length == that.data.pictures.length - 1){
+          var fileURL = imageURLHead + fileName
+          that.data.tmpUploadedPics.push(fileURL)
+          that.setData({
+            tmpUploadedPics: that.data.tmpUploadedPics
+          })
+          if (that.data.tmpUploadedPics.length == that.data.pictures.length - 1){
               that.postHouseInfo()
               console.log("上传成功的房源照片集合：",that.data.uploadedPics)
           }
