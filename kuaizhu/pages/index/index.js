@@ -23,6 +23,7 @@ Page({
     pageData:[
       
     ],
+    pageNumber:0,
     
   },
   
@@ -30,8 +31,20 @@ Page({
   onLoad: function () {
    var that = this
    wx.request({
-     url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州',
+     url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州&pageNumber=0&pageSize=12',
      success: function (res) {
+
+      for(var i = 0;i<res.data.result.length;i++){
+        if (res.data.result[i].RentalProperties.length<=4){
+          res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+        }else{
+          var tempArr = res.data.result[i].RentalProperties.splice(4, res.data.result.length-4)
+          res.data.result[i]["tagString"] = tempArr.join("|")
+        }
+
+      }
+
+      console.log("修改后数据：",res.data.result)
        that.setData({
          pageData:res.data.result
        })
@@ -54,9 +67,26 @@ Page({
   },
   onShow:function(){
     var that = this
+    that.setData({
+      pageNumber:0
+    })
     wx.request({
-      url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州',
+      url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州&pageNumber=0&pageSize=12',
       success: function (res) {
+        
+        for (var i = 0; i < res.data.result.length; i++) {
+          if (res.data.result[i].RentalProperties.length <= 4) {
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+          } else {
+            var tempArr = res.data.result[i].RentalProperties.splice(4, res.data.result.length - 4)
+            res.data.result[i]["tagString"] = tempArr.join("|")
+          }
+
+        }
+        that.setData({
+          pageData: res.data.result
+        })
+
         that.setData({
           pageData: res.data.result
         })
@@ -197,5 +227,51 @@ Page({
         }
       }
     })
-  }
+  },
+  searchScrollLower: function () {
+    let that = this;
+    console.log("来到了底部")
+      that.setData({
+          
+        searchLoading: true   
+      }); 
+  },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    wx.showLoading({
+      title: '正在加载',
+    })
+
+    var that = this
+    that.setData({
+      pageNumber:that.data.pageNumber+1
+    })
+    wx.request({
+      url: "https://www.kzroom.club/v1/city/queryRentRooms?city=广州&pageNumber=" + that.data.pageNumber + "&pageSize=12",
+      success: function (res) {
+
+        for (var i = 0; i < res.data.result.length; i++) {
+          if (res.data.result[i].RentalProperties.length <= 4) {
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+          } else {
+            var tempArr = res.data.result[i].RentalProperties.splice(4, res.data.result.length - 4)
+            res.data.result[i]["tagString"] = tempArr.join("|")
+          }
+
+        }
+        
+        that.setData({
+          pageData: that.data.pageData.concat(res.data.result)
+        })
+        wx.hideLoading()
+        
+      },
+      fail: function (err) {
+        console.log(err)
+        wx.hideLoading()
+      }
+    })
+  },
 })

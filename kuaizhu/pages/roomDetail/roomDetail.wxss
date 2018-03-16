@@ -244,8 +244,8 @@
 
 .roomDes .roomUser .cover {
   float: left;
-  width: 120rpx;
-  height: 120rpx;
+  width: 80rpx;
+  height: 80rpx;
   overflow: hidden;
   border-radius: 50%;
   border-color: #CDD3E0;  
@@ -255,8 +255,8 @@
 }
 .roomDes .roomUser .rightIcon {
   float: right;
-  width: 60rpx;
-  height: 60rpx;
+  width: 50rpx;
+  height: 50rpx;
   overflow: hidden;
   margin-right: 20rpx;
 }

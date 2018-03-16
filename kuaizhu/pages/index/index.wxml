@@ -43,8 +43,8 @@
   
 </view>
 
-  <scroll-view class='scrollView' scroll-y="true" style="height:{{scrollHeight}}px"
-  bindscrolltolower="scrollLowerEvent">
+  <scroll-view class='scrollView' scroll-y="true" 
+  bindscrolltolower="searchScrollLower">
 
     <view >
 
@@ -56,7 +56,7 @@
             </view>
             <view class="content">
               <view class="title">{{item.title}}</view>
-              <view class='rentTags'>{{item.RentalProperties}}</view>
+              <view class='rentTags'>{{item.tagString}}</view>
               <view class='opertionTags'>
               <text class='opertionText'>精选房源</text>
               </view>
@@ -69,12 +69,10 @@
           </view>
         </view>
       </block>
-
+    
     </view>
 
-    <view class="refresh-footer" wx:if="{{loadingMore}}">
-      <icon type="waiting" size="30" color="{{footerIconColor}}"  />
-    </view>
+     <view  hidden="{{!searchLoading}}">正在载入更多...</view> 
 
 </scroll-view>  
 

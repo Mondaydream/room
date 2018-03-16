@@ -125,4 +125,10 @@ Page({
       swiperCurrent: e.detail.current
     })
   },
+  add:function(){
+    var that = this
+    wx.makePhoneCall({
+      phoneNumber: that.data.roomData.phoneNumber //仅为示例，并非真实的电话号码
+    })
+  },
 })
