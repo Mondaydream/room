@@ -95,12 +95,12 @@
 .roomTags .tag .tagView{
     /* Rectangle 3: */
   border: 0 solid #B7BDCB;
-  border-radius: 70rpx;
+  border-radius: 50rpx;
   border-width: 1rpx;
   /* 精选房源: */
   padding: 5rpx; 
   font-family: PingFangSC-Regular;
-  font-size: 30rpx;
+  font-size: 26rpx;
   color: #666D7B;
 }
 
@@ -262,14 +262,14 @@
 }
 
 .roomDes .roomUser .content {
-  margin-left: 140rpx;
-  height: 120rpx;
+  margin-left: 100rpx;
+  height: 90rpx;
   position: relative;
 }
 
 .roomDes .roomUser .content .title{
   position: absolute;
-  font-size: 40rpx;
+  font-size: 32rpx;
   height: 60rpx;
   top: 0rpx;
   left: 0rpx;
@@ -278,9 +278,9 @@
 }
 .roomDes .roomUser .content .owerName{
   position: absolute;
-  font-size: 30rpx;
+  font-size: 24rpx;
   height: 30rpx;
-  bottom:20rpx; 
+  bottom:10rpx; 
   color: #88909F;
   left: 0rpx;
 }

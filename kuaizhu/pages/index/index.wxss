@@ -62,7 +62,7 @@
 }
 
 .scrollView{
-  margin-top: 30px;
+  margin-top: 90rpx;
 }
 
 /*index list*/
@@ -76,8 +76,8 @@
 }
 .index-list-item .cover {
   float: left;
-  width: 140rpx;
-  height: 210rpx;
+  width: 224rpx;
+  height: 224rpx;
   overflow: hidden;
 }
 .index-list-item .cover image.cover-img {
@@ -85,17 +85,16 @@
   height: 100%;
 }
 .index-list-item .content {
-  margin-left: 160rpx;
+  margin-left: 250rpx;
 }
 .index-list-item .title {
-  font-size: 35rpx;
-  font-weight:500;
-  height: 60rpx;
+  font-size: 30rpx;
+   font-weight:500; 
+  height: 45rpx;
   width: 300rpx;
   margin-top: 0rpx;
   margin-left: 0rpx;
   margin-right: 0rpx;
-  overflow: hidden;
   color: #444C5B;
   text-align: left;
 }

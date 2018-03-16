@@ -35,11 +35,12 @@ Page({
      success: function (res) {
 
       for(var i = 0;i<res.data.result.length;i++){
-        if (res.data.result[i].RentalProperties.length<=4){
+        if (res.data.result[i].RentalProperties.length<=3){
           res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
         }else{
-          var tempArr = res.data.result[i].RentalProperties.splice(4, res.data.result.length-4)
-          res.data.result[i]["tagString"] = tempArr.join("|")
+          var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
+          console.log("剪切后的数据",tempArr)
+          res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
         }
 
       }
@@ -75,11 +76,11 @@ Page({
       success: function (res) {
         
         for (var i = 0; i < res.data.result.length; i++) {
-          if (res.data.result[i].RentalProperties.length <= 4) {
+          if (res.data.result[i].RentalProperties.length <= 3) {
             res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
           } else {
-            var tempArr = res.data.result[i].RentalProperties.splice(4, res.data.result.length - 4)
-            res.data.result[i]["tagString"] = tempArr.join("|")
+            var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
           }
 
         }
@@ -136,9 +137,9 @@ Page({
     });
     // 第2步：这个动画实例赋给当前的动画实例  
     this.animation = animation;
-    // 第3步：执行第一组动画  
+    // 第2步：执行第一组动画  
     animation.opacity(0).rotateX(-100).step();
-    // 第4步：导出动画对象赋给数据对象储存  
+    // 第2步：导出动画对象赋给数据对象储存  
     this.setData({
       animationData: animation.export()
     })
@@ -253,13 +254,12 @@ Page({
       success: function (res) {
 
         for (var i = 0; i < res.data.result.length; i++) {
-          if (res.data.result[i].RentalProperties.length <= 4) {
+          if (res.data.result[i].RentalProperties.length <= 3) {
             res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
           } else {
-            var tempArr = res.data.result[i].RentalProperties.splice(4, res.data.result.length - 4)
-            res.data.result[i]["tagString"] = tempArr.join("|")
+            var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
           }
-
         }
         
         that.setData({
