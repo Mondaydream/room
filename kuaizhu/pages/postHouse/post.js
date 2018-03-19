@@ -33,33 +33,41 @@ Page({
 
     roomTags:[
         {
-          "tag":"安静",
+          "tag":"电梯房",
           "select":false,
         },
         {
-          "tag": "首租",
-          "select":false,
-        }, {
-          "tag": "单间",
-          "select":false,
-        }, {
-          "tag": "电梯房",
+          "tag": "楼梯房",
           "select":false,
         }, {
           "tag": "近地铁",
           "select":false,
         }, {
-          "tag": "家具齐全",
+          "tag": "交通便利",
+          "select":false,
+        }, {
+          "tag": "配套齐全",
+          "select":false,
+        }, {
+          "tag": "环境好",
           "select":false,
         }, {
           "tag": "室友nice",
           "select":false,
         }, {
-          "tag": "设施完善",
+          "tag": "大型小区",
           "select":false,
         }, {
-          "tag": "清新",
+          "tag": "周边配置好",
           "select":false,
+        },
+        {
+          "tag": "首租",
+          "select": false,
+        },
+        {
+          "tag": "安静",
+          "select": false,
         },
       ],
     postData:{
@@ -73,6 +81,7 @@ Page({
       "releseTime":"",
       "city":"广州",
     },
+    houseOwner:{},
 
   },
 
@@ -80,6 +89,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     wx.getUserInfo({
      
       success: function (data) {
@@ -93,8 +103,9 @@ Page({
         var province = userInfo.province
         var city = userInfo.city
         var country = userInfo.country
-
-        console.log("这个字典：",userInfo)
+        that.setData({
+          houseOwner:data.userInfo
+        })
       }
     })
   },
@@ -307,6 +318,8 @@ Page({
     that.data.postData.coverImgUrl = that.data.uploadedPics[0]
     
     that.data.postData.releseTime = Util.formatTime(new Date())
+
+    that.data.postData["roomOwner"] = that.data.houseOwner 
 
     that.setData({
       postData: that.data.postData

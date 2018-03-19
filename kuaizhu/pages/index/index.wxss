@@ -91,7 +91,7 @@
   font-size: 30rpx;
    font-weight:500; 
   height: 45rpx;
-  width: 300rpx;
+  width: 500rpx;
   margin-top: 0rpx;
   margin-left: 0rpx;
   margin-right: 0rpx;

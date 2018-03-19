@@ -64,11 +64,11 @@
 
 <view class='roomDes'>
  <view class='roomUser'>
-    <image class='cover' src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/headImage.png'></image>
+    <image class='cover' src='{{roomData.roomOwner.avatarUrl}}'></image>
     <image class='rightIcon' src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/Shape.png'></image>
     <view class='content' >
       <text class='title'>招租人想说</text>
-      <text class='owerName'>陈小姐</text>
+      <text class='owerName'>{{roomData.roomOwner.nickName}}</text>
     </view>
     
   </view>
