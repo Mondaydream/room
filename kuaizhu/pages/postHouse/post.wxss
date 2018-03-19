@@ -18,6 +18,14 @@
   /* background-image: url(http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/fangyuanmingzibeijingtu.png); */
 
 }
+.bgView .kongbaiView{
+  position: relative;
+  margin-top: 40rpx;
+  margin-right: 20rpx;
+  
+   height: 150rpx; 
+  background-size:auto;
+}
 
 .bgView .fristItem{
   position: relative;
