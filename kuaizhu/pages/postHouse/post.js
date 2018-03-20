@@ -317,7 +317,7 @@ Page({
 
     that.data.postData.coverImgUrl = that.data.uploadedPics[0]
     
-    that.data.postData.releseTime = Util.formatTime(new Date())
+    that.data.postData.releseTime = new Date().getTime()
 
     that.data.postData["roomOwner"] = that.data.houseOwner 
 

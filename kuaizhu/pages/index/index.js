@@ -42,6 +42,7 @@ Page({
           console.log("剪切后的数据",tempArr)
           res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
         }
+        res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
 
       }
 
@@ -82,6 +83,7 @@ Page({
             var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
             res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
           }
+          res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
 
         }
         that.setData({
@@ -182,6 +184,7 @@ Page({
   checkSettingStatu:function(cb) {
     //授权处理
     var that = this;
+
     // 判断是否是第一次授权，非第一次授权且授权失败则进行提醒
     wx.getSetting({
       success: function success(res) {
@@ -260,6 +263,7 @@ Page({
             var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
             res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
           }
+          res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
         }
         
         that.setData({
@@ -273,5 +277,85 @@ Page({
         wx.hideLoading()
       }
     })
+  },
+
+  onPullDownRefresh(){
+    
+    
+    var that = this
+    that.setData({
+      showPullDownRefresh:true
+    })
+    wx.request({
+      url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州&pageNumber=0&pageSize=12',
+      success: function (res) {
+
+        for (var i = 0; i < res.data.result.length; i++) {
+          if (res.data.result[i].RentalProperties.length <= 3) {
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+          } else {
+            var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
+            console.log("剪切后的数据", tempArr)
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+          }
+          res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
+
+        }
+
+        console.log("修改后数据：", res.data.result)
+        that.setData({
+          pageData: res.data.result
+        })
+        console.log(res.data.result)
+       
+        wx.stopPullDownRefresh()
+        wx.hideLoading()
+      },
+      fail: function (err) {
+        console.log(err)
+      }
+    })
+
+  },
+
+  getDateDiff : function (dateTimeStamp){
+    var result;
+    var minute = 1000 * 60;
+    var hour = minute * 60;
+    var day = hour * 24;
+    var halfamonth = day * 15;
+    var month = day * 30;
+    var now = new Date().getTime();
+    var diffValue = now - dateTimeStamp;
+    if(diffValue < 0){
+      return;
+    }
+    var monthC = diffValue / month;
+    var weekC = diffValue / (7 * day);
+    var dayC = diffValue / day;
+    var hourC = diffValue / hour;
+    var minC = diffValue / minute;
+    if(monthC>=1) {
+      if (monthC <= 12)
+        result = "" + parseInt(monthC) + "月前";
+      else {
+        result = "" + parseInt(monthC / 12) + "年前";
+      }
+    }
+    else if(weekC>=1) {
+      result = "" + parseInt(weekC) + "周前";
+    }
+    else if(dayC>=1) {
+      result = "" + parseInt(dayC) + "天前";
+    }
+    else if(hourC>=1) {
+      result = "" + parseInt(hourC) + "小时前";
+    }
+    else if(minC>=1) {
+      result = "" + parseInt(minC) + "分钟前";
+    }else{
+      result="刚刚";
+    }
+    return result;
   },
 })

@@ -40,14 +40,14 @@
 
         <text class='header-childText-text'>业主直连</text>
     </view>
-  
 </view>
-
+<text class='pullDownRefresh' wx:if="{{showPullDownRefresh}}">           正在刷新 </text>
+ 
   <scroll-view class='scrollView' scroll-y="true" 
   bindscrolltolower="searchScrollLower">
 
     <view >
-
+     
       <block wx:for="{{pageData}}" wx:key="id">
         <view class="list-item" data-room-id="{{item.roomId}}" bindtap="toDetailPage">
           <view class="index-list-item">
@@ -62,7 +62,7 @@
               </view>
               <view class='desc'>
                 <text class="rentPrice">¥{{item.rentPrice}}/月</text>
-                <text class='rentTime'>{{item.releseTime}}</text>
+                <text class='rentTime'>{{item.timeStr}}</text>
               </view>
 
             </view>
