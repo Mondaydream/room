@@ -41,7 +41,7 @@
         <text class='header-childText-text'>业主直连</text>
     </view>
 </view>
-<text class='pullDownRefresh' wx:if="{{showPullDownRefresh}}">           正在刷新 </text>
+
  
   <scroll-view class='scrollView' scroll-y="true" 
   bindscrolltolower="searchScrollLower">
