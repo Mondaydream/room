@@ -1,6 +1,8 @@
 <!--pages/roomDetail/roomDetail.wxml-->
 
 
+
+<scroll-view class='bgView'>
 <view class='header'> 
     <swiper class="swiper"  current="{{swiperCurrent}}" bindchange="swiperChange" autoplay="true" interval="2000" duration="500" >    
         <block wx:for="{{roomData.images}}" wx:for-index="index">    
@@ -75,6 +77,8 @@
   
   <view  class='containView'><text>{{roomData.roomDescription}}</text></view> 
 </view>
+</scroll-view>
  
+
 
 <button bindtap="add" style='color: white' class="address-add">联系对方</button>
