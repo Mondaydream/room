@@ -84,7 +84,6 @@
 }
 
  .textOne{
-  position: relative;
   margin-left: 30rpx;
   font-size: 30rpx;
   right: 10rpx;
@@ -98,7 +97,7 @@
     
     margin-left: 20rpx;
     margin-top: 30rpx;
-    margin-bottom: 10rpx;
+    margin-bottom: 20rpx;
     height: 40rpx;
     font: 30rpx "microsoft yahei";  
     background: #fff;  
@@ -109,9 +108,9 @@
 .input-des-view{
   position: relative;
     
-    margin-left: 20rpx;
-    margin-top: 30rpx;
-    margin-right: 10rpx;
+  margin-left: 20rpx;
+  margin-top: 30rpx;
+  margin-right: 10rpx;
     margin-bottom: 10rpx;
     height: 140rpx;
     font: 30rpx "microsoft yahei";  
@@ -144,11 +143,16 @@
   border: 0 solid #B7BDCB;
   border-radius: 70rpx;
   border-width: 1rpx;
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+
   /* 精选房源: */
-  padding: 5rpx; 
+  
   font-family: PingFangSC-Regular;
-  font-size: 30rpx;
-  color: #666D7B;
+  font-size: 26rpx;
+  color: #88909F;
 }
 
 .selectedType{
@@ -157,7 +161,11 @@
   border-radius: 70rpx;
   border-width: 1rpx;
   /* 精选房源: */
-  padding: 5rpx; 
+  padding-right: 20rpx;
+  padding-left: 20rpx;
+  padding-top: 4rpx;
+  padding-bottom: 4rpx;
+
   font-family: PingFangSC-Regular;
   font-size: 30rpx;
   color: #FF6953;
@@ -166,7 +174,7 @@
 .uploadContainView{
   position: relative;
   bottom: 0rpx;
-  left: 0rpx;
+  left: 20rpx;
   right: 20rpx;
   display: flex;
   flex-direction: row;
@@ -197,4 +205,8 @@
   background: #FF6953;
   border-radius: 0px;
   z-index: 10;
+}
+
+.placeHolderColor{
+  color: #CDD3E0;
 }

@@ -1,12 +1,12 @@
 <!--pages/postHouse/post.wxml-->
-<button bindtap="add" style='color: white' class="address-add" style="position:fixed;opacity:10 ; bottom:0px;right:0px;">提交</button>
+
 <view class='bgView'>
   <image src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/qingtigongfangyuanxinxi.png' class='image'></image>
   <view class='fristItem'>
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>给你的房源取个名吧</text>
-      <input  class='input-phone-view' name="phone" placeholder="请填写（格式: 位置+小区+户型）" value="{{phone}}" bindinput="bindRoomTitle"></input>  
+      <input  class='input-phone-view' name="phone" placeholder="请填写（格式: 位置+小区+户型）" placeholder-class='placeHolderColor' value="{{phone}}" bindinput="bindRoomTitle"></input>  
     </view>
   </view>
 
@@ -32,7 +32,7 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>你想租多少钱一个月</text>
-      <input  class='input-phone-view'  placeholder="请填写（单位: 元）"  bindinput="bindPrice"></input> 
+      <input  class='input-phone-view'  placeholder="请填写（单位: 元）" placeholder-class='placeHolderColor' bindinput="bindPrice"></input> 
     </view>
   </view>
 
@@ -54,12 +54,12 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>简单介绍一下你的房子</text>
-      <textarea  class='input-des-view'  placeholder="请填写"  bindinput="bindDes"></textarea> 
+      <textarea  class='input-des-view'  placeholder="请填写" placeholder-class='placeHolderColor' bindinput="bindDes"></textarea> 
     </view>
   </view>
   
   <view class='fangyuanmingziUploadImage'>
-    <view class='.left-Triangle'></view>
+    <view class='left-Triangle'></view>
     <view class='left-message '>
       
       <text class='textOne'>上传几张照片提升曝光量吧</text>
@@ -86,12 +86,12 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>留下你的电话，以便租客联系</text>
-      <input  class='input-phone-view'  placeholder=""  bindinput="binphone"></input> 
+      <input  class='input-phone-view'  placeholder="" placeholder-class='placeHolderColor' bindinput="binphone"></input> 
     </view>
   </view>
 
  <view class='kongbaiView'></view>
 
- 
 </view>
+<button bindtap="add"  class="address-add" style="position:fixed;opacity:1 ; bottom:0px;right:0px;color: white;">提交</button>
  

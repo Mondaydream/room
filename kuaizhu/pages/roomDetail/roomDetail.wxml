@@ -12,16 +12,17 @@
           </block>    
       </swiper> 
     <view class='numberImage'>
-      <text class='text'>{{swiperCurrent + 1}}/{{perCounts}}</text>
+      <text class='text'>{{swiperCurrent + 1}}</text>
+      <text class='text2'>/{{perCounts}}</text>
   </view>
 </view>
 
 <text class='title'>{{roomData.title}}</text>
 <view class='roomPrice'>
-  <text class='price'>¥{{roomData.rentPrice}}/月</text>
-  <view class='priceTag'>
+  <text class='price'>¥{{roomData.rentPrice}}<text class='moon'>/月</text></text>
+  <!-- <view class='priceTag'>
     <text class='tag'>价格优</text>
-  </view>
+  </view> -->
 </view>
 
 <view class='roomTags'>
