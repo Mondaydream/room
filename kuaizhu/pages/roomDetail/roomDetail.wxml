@@ -2,7 +2,7 @@
 
 
 
-<scroll-view class='bgView'>
+<view class='bgView'> 
 <view class='header'> 
     <swiper class="swiper"  current="{{swiperCurrent}}" bindchange="swiperChange" autoplay="true" interval="2000" duration="500" >    
         <block wx:for="{{roomData.images}}" wx:for-index="index">    
@@ -33,34 +33,6 @@
    </block> 
 </view>
 
-<!-- <view class='lineView'><view class='line'></view></view>
-
-<view class='estateView'>
- <view class='containView'>
-    <text class='estateTitle'>台北黄金屋</text>
-    <text class='mapButton'>查看地图</text>
- </view>
-  
-</view>
-
-<view class='estateView'>
- <view class='containView'>
-    <image src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/Shape.png' class='mapImage'></image>
-    <view class='leftSpace'>
-      <text class='estatePlace'>台北黄金一路18号</text>
-    </view>
- </view>
-</view>
-
-<view class='lineViewTwo'><view class='line'></view></view>  
- <view class='estateTags'>
-   <block wx:for="{{tags}}" wx:for-index="index">    
-        <view class='tag'> 
-        <text class='estateTagView'>{{item.tag}}</text>
-         </view>
-   </block> 
-</view> -->
-
  <view class='lineViewTwo'><view class='line'></view></view>  
 
 
@@ -78,7 +50,7 @@
   
   <view  class='containView'><text>{{roomData.roomDescription}}</text></view> 
 </view>
-</scroll-view>
+ </view> 
  
 
 

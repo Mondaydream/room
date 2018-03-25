@@ -1,9 +1,9 @@
 /* pages/roomDetail/roomDetail.wxss */
 .bgView{
-  width: 100%;
-  height: 100%;
+  width: 100%;  
+  height: 1200rpx;  
+  
 }
-
 .header{
   height: 400rpx;
   width: 100%;
