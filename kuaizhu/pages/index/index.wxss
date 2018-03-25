@@ -25,11 +25,11 @@
 }
 
 .header{
-  margin-top: 0px;
+  
   z-index: 1; 
   position:fixed; 
   top:0;
-  height: 42px;
+  height: 85rpx;
   width: 100%;
   background-color: #FFFFFF;
   display: flex;
@@ -40,18 +40,21 @@
   flex: 1;
   height: 60rpx;
   align-self: center; 
-  justify-content: center; 
+  justify-content: center;
+  margin-top: -15rpx; 
 }
 .header-childText .header-childText-image{
-  width: 40rpx;
-  height: 40rpx;
+  margin-top: -15rpx;
+  width: 56rpx;
+  height: 56rpx;
   align-self: center; 
   display: table-cell;
- 
-  padding:30rpx;
+  
+  padding:20rpx;
   vertical-align: middle;
 }
 .header-childText .header-childText-text{
+  margin-top: -15rpx;
   color: #666D7B; 
   display: table-cell;
   vertical-align: middle;
@@ -89,7 +92,7 @@
   margin-left: 250rpx;
 }
 .index-list-item .title {
-  font-size: 30rpx;
+  font-size: 32rpx;
    font-weight:500; 
   height: 45rpx;
   width: 500rpx;
@@ -103,7 +106,7 @@
 .index-list-item .rentTags{
   height: 30rpx;
   color: #88909F;
-  font-size: 30rpx;
+  font-size: 24rpx;
   margin-top: 0rpx;
 }
 
@@ -118,12 +121,13 @@
   /* Rectangle 2 Copy 2: */
 border: 0 solid #84A6E2;
 border-width: 0.5rpx;
-border-radius: 1rpx;
-
+border-radius: 2rpx;
+padding-right: 8rpx;
+padding-left: 8rpx;
 
 /* 精选房源: */
 font-family: PingFangSC-Regular;
-font-size: 25rpx;
+font-size: 22rpx;
 color: #84A6E2;
 }
 
@@ -138,15 +142,24 @@ color: #84A6E2;
 .index-list-item .rentPrice{
   flex: 2;
   color: #FF6953;
+  font-size: 40rpx;
+  font-family: din alternate;
+}
+.moon{
+  color: #FF6953;
   font-size: 30rpx;
+  position: absolute;
+  margin-top: 5rpx;
 }
 
 .index-list-item .rentTime{
   flex: 1;
   text-align: right;
   margin-right: 10rpx;
-  font-size: 30rpx;
+  font-size: 24rpx;
   color: #B7BDCB;
+  margin-top: 12rpx; 
+  margin-right: 0rpx;
 }
 .float-action {
   position: absolute;

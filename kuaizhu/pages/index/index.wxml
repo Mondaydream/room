@@ -1,5 +1,5 @@
 <!--index.wxml-->
-  <view class="float-action" bindtap="powerDrawer" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottom}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent" > 
+  <view class="float-action" bindtap="powerDrawer" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottom}}rpx;right:{{ballRight}}rpx;" bindtouchmove="ballMoveEvent" > 
 <image    src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_release%403x.png' class='iCon'></image>
 </view> 
 <!-- <view class="float-action" bindtap="powerDrawer" data-statu="open" style="position:fixed; opacity: {{ballOpacity}};bottom:{{ballBottomTwo}}px;right:{{ballRight}}px;" bindtouchmove="ballMoveEvent"> 
@@ -26,17 +26,17 @@
 
 <view class='header'>
     <view class='header-childText'> 
-        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_01.png' class='header-childText-image'></image>
+        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_01.png' class='header-childText-image' mode='widthFix'></image>
 
         <text class='header-childText-text'>精选房源</text>
     </view>
     <view class='header-childText'> 
-        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_02.png' class='header-childText-image'></image>
+        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_02.png' class='header-childText-image' mode='widthFix'></image>
 
         <text class='header-childText-text'>100%真实</text>
     </view>
     <view class='header-childText'> 
-        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_03.png' class='header-childText-image'></image>
+        <image  src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/icon_home_03.png' class='header-childText-image'mode='widthFix'></image>
 
         <text class='header-childText-text'>业主直连</text>
     </view>
@@ -58,10 +58,11 @@
               <view class="title">{{item.title}}</view>
               <view class='rentTags'>{{item.tagString}}</view>
               <view class='opertionTags'>
-              <text class='opertionText'>精选房源</text>
+              <text class='opertionText'> {{jingxuanfangyuan}} </text>
               </view>
               <view class='desc'>
-                <text class="rentPrice">¥{{item.rentPrice}}/月</text>
+                <text class="rentPrice">¥{{item.rentPrice}}/<text class='moon'>月</text></text>
+                
                 <text class='rentTime'>{{item.timeStr}}</text>
               </view>
 

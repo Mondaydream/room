@@ -14,7 +14,7 @@ Page({
 
     ballOpacity:8,
     ballBottom:20,
-    ballRight:20,
+    ballRight:16,
     ballBottomTwo:75,
     
     showModalStatus: false,
@@ -24,6 +24,7 @@ Page({
       
     ],
     pageNumber:0,
+    jingxuanfangyuan:" 精选房源 ",
     
   },
   
@@ -36,11 +37,11 @@ Page({
 
       for(var i = 0;i<res.data.result.length;i++){
         if (res.data.result[i].RentalProperties.length<=3){
-          res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+          res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
         }else{
           var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
           console.log("剪切后的数据",tempArr)
-          res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+          res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
         }
         res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
 
@@ -78,10 +79,10 @@ Page({
         
         for (var i = 0; i < res.data.result.length; i++) {
           if (res.data.result[i].RentalProperties.length <= 3) {
-            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
           } else {
             var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
-            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
           }
           res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
 
@@ -258,10 +259,10 @@ Page({
 
         for (var i = 0; i < res.data.result.length; i++) {
           if (res.data.result[i].RentalProperties.length <= 3) {
-            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
           } else {
             var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
-            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
           }
           res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
         }
@@ -292,11 +293,11 @@ Page({
 
         for (var i = 0; i < res.data.result.length; i++) {
           if (res.data.result[i].RentalProperties.length <= 3) {
-            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
           } else {
             var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
             console.log("剪切后的数据", tempArr)
-            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join("|")
+            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
           }
           res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
 
