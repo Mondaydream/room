@@ -318,6 +318,7 @@
   font-family: PingFangSC-Regular;
   font-size: 30rpx;
   color: #88909F;
+  height: 800rpx;
 }
 
 .float-action {

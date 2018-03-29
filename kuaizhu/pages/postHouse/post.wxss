@@ -102,21 +102,22 @@
     font: 30rpx "microsoft yahei";  
     background: #fff;  
     color:#444C5B;  
-    line-height: 30px;  
+    line-height: 30px; 
 }
 
 .input-des-view{
   position: relative;
     
-  margin-left: 20rpx;
+  left: 20rpx;
   margin-top: 30rpx;
-  margin-right: 10rpx;
-    margin-bottom: 10rpx;
-    height: 140rpx;
-    font: 30rpx "microsoft yahei";  
-    background: #fff;  
-    color:#444C5B;  
-    line-height: 30px;  
+  right: -100rpx;
+  margin-bottom: 10rpx;
+  width: 650rpx;
+  height: 140rpx;
+  font: 30rpx "microsoft yahei";  
+  background: #fff;  
+  color:#444C5B;  
+  line-height: 30px;  
 }  
 
  .roomTags{
@@ -209,4 +210,5 @@
 
 .placeHolderColor{
   color: #CDD3E0;
+  z-index:1;
 }

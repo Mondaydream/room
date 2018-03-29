@@ -1,6 +1,7 @@
 <!--pages/postHouse/post.wxml-->
 
 <view class='bgView'>
+<button bindtap="add"  class="address-add" style="position:fixed;opacity:1 ; bottom:0px;right:0px;color: white;">提交</button>
   <image src='http://kuaizhu.oss-cn-shenzhen.aliyuncs.com/qingtigongfangyuanxinxi.png' class='image'></image>
   <view class='fristItem'>
     <view class='.left-Triangle'></view>
@@ -54,7 +55,7 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>简单介绍一下你的房子</text>
-      <textarea  class='input-des-view'  placeholder="请填写" placeholder-class='placeHolderColor' bindinput="bindDes"></textarea> 
+       <textarea  class='input-des-view'  placeholder="请填写" placeholder-class='placeHolderColor' bindinput="bindDes"></textarea>  
     </view>
   </view>
   
@@ -93,5 +94,5 @@
  <view class='kongbaiView'></view>
 
 </view>
-<button bindtap="add"  class="address-add" style="position:fixed;opacity:1 ; bottom:0px;right:0px;color: white;">提交</button>
+
  
