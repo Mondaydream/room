@@ -112,7 +112,7 @@
   margin-top: 30rpx;
   right: -100rpx;
   margin-bottom: 10rpx;
-  width: 650rpx;
+  width: 96%;
   height: 140rpx;
   font: 30rpx "microsoft yahei";  
   background: #fff;  

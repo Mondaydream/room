@@ -55,7 +55,7 @@
     <view class='.left-Triangle'></view>
     <view class='left-message '>
       <text class='textOne'>简单介绍一下你的房子</text>
-       <textarea  class='input-des-view'  placeholder="请填写" placeholder-class='placeHolderColor' bindinput="bindDes"></textarea>  
+       <textarea  class='input-des-view'  placeholder="请填写" placeholder-class='placeHolderColor' maxlength = "-1" bindinput="bindDes"></textarea>  
     </view>
   </view>
   
