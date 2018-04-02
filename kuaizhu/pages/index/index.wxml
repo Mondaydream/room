@@ -58,17 +58,21 @@
               <view class="title">{{item.title}}</view>
               <view class='rentTags'>{{item.tagString}}</view>
               <view class='opertionTags'>
-              <text class='opertionText'> {{jingxuanfangyuan}} </text>
+              <text wx:if="{{item.handPick == 1}}" class='opertionText'> {{jingxuanfangyuan}} </text>
               </view>
               <view class='desc'>
                 <text class="rentPrice">¥{{item.rentPrice}}/<text class='moon'>月</text></text>
                 
                 <text class='rentTime'>{{item.timeStr}}</text>
+                
               </view>
-
+              
             </view>
+            
           </view>
         </view>
+         <button data-room-id="{{item.handPick}}" data-room-idd ="{{item.handPick}}" bindtap="handPick">选为精选</button> 
+        <button data-room-id="{{item.roomId}}" bindtap="deleteRoom">删除房源</button>
       </block>
     
     </view>

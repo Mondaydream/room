@@ -359,4 +359,63 @@ Page({
     }
     return result;
   },
+  handPick : function(e){
+    var id = e.currentTarget.dataset.roomId;
+    var handPickNum = e.currentTarget.dataset.roomhandIdd;
+    console.log("是否为精选:",handPickNum)
+    var postData = {
+      roomIDs:[id],
+      handPick: 1,
+    }
+    var jsonStr = JSON.stringify(postData)
+    console.log("上传的json字符串:", jsonStr)
+    wx.request({
+      url: "https://www.kzroom.club/handPickRoom",
+      header: {
+        "Content-Type": "application/json"
+      },
+      method: "POST",
+
+      data: jsonStr,
+      complete: function (res) {
+        
+        if (res == null || res.data == null) {
+          console.error('网络请求失败');
+          return;
+        } else {
+
+          console.log("设置精选成功:", res);
+         
+        }
+      }
+    }) 
+  },
+  deleteRoom :function(e){
+    var id = e.currentTarget.dataset.roomId;
+    var postData = {
+      roomIDs: [id],
+    }
+    var jsonStr = JSON.stringify(postData)
+    console.log("上传的json字符串:", jsonStr)
+    wx.request({
+      url: "https://www.kzroom.club/v1/deleteRentRoom",
+      header: {
+        "Content-Type": "application/json"
+      },
+      method: "POST",
+
+      data: jsonStr,
+      complete: function (res) {
+
+        if (res == null || res.data == null) {
+          console.error('网络请求失败');
+          return;
+        } else {
+
+          console.log("设置精选成功:", res);
+
+        }
+      }
+    }) 
+  }
 })
