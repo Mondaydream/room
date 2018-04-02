@@ -361,34 +361,54 @@ Page({
   },
   handPick : function(e){
     var id = e.currentTarget.dataset.roomId;
-    var handPickNum = e.currentTarget.dataset.roomhandIdd;
-    console.log("是否为精选:",handPickNum)
-    var postData = {
-      roomIDs:[id],
-      handPick: 1,
-    }
-    var jsonStr = JSON.stringify(postData)
-    console.log("上传的json字符串:", jsonStr)
-    wx.request({
-      url: "https://www.kzroom.club/handPickRoom",
-      header: {
-        "Content-Type": "application/json"
-      },
-      method: "POST",
+    var handPickNum = e.currentTarget.dataset.rId;
 
-      data: jsonStr,
-      complete: function (res) {
-        
-        if (res == null || res.data == null) {
-          console.error('网络请求失败');
-          return;
+    wx.showModal({
+      title: '⚠️',
+      content: '是否设置或取消精选',
+      success: function (res) {
+        if (res.confirm) {
+          var postHandPick;
+          if (handPickNum == 1) {
+            postHandPick = 0
+          } else {
+            postHandPick = 1
+          }
+          var postData = {
+            roomIDs: [id],
+            handPick: postHandPick,
+          }
+          var jsonStr = JSON.stringify(postData)
+          console.log("上传的json字符串:", jsonStr)
+          wx.request({
+            url: "https://www.kzroom.club/handPickRoom",
+            header: {
+              "Content-Type": "application/json"
+            },
+            method: "POST",
+
+            data: jsonStr,
+            complete: function (res) {
+
+              if (res == null || res.data == null) {
+                console.error('网络请求失败');
+                return;
+              } else {
+
+                console.log("设置精选成功:", res);
+
+              }
+            }
+          }) 
         } else {
-
-          console.log("设置精选成功:", res);
-         
+          
         }
+
       }
-    }) 
+    })
+
+
+    
   },
   deleteRoom :function(e){
     var id = e.currentTarget.dataset.roomId;
@@ -396,26 +416,40 @@ Page({
       roomIDs: [id],
     }
     var jsonStr = JSON.stringify(postData)
-    console.log("上传的json字符串:", jsonStr)
-    wx.request({
-      url: "https://www.kzroom.club/v1/deleteRentRoom",
-      header: {
-        "Content-Type": "application/json"
-      },
-      method: "POST",
 
-      data: jsonStr,
-      complete: function (res) {
+    wx.showModal({
+      title: '⚠️',
+      content: '是否删除房源',
+      success: function (res) {
+        if (res.confirm) {
+          console.log("上传的json字符串:", jsonStr)
+          wx.request({
+            url: "https://www.kzroom.club/v1/deleteRentRoom",
+            header: {
+              "Content-Type": "application/json"
+            },
+            method: "POST",
 
-        if (res == null || res.data == null) {
-          console.error('网络请求失败');
-          return;
+            data: jsonStr,
+            complete: function (res) {
+
+              if (res == null || res.data == null) {
+                console.error('网络请求失败');
+                return;
+              } else {
+
+                console.log("设置精选成功:", res);
+
+              }
+            }
+          }) 
         } else {
-
-          console.log("设置精选成功:", res);
-
+          console.log('用户点击取消')
         }
+
       }
-    }) 
+    })
+
+   
   }
 })

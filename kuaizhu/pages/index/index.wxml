@@ -71,7 +71,9 @@
             
           </view>
         </view>
-         <button data-room-id="{{item.handPick}}" data-room-idd ="{{item.handPick}}" bindtap="handPick">选为精选</button> 
+         
+         <button wx:if="{{item.handPick == 0}}" data-room-id="{{item.handPick}}" data-r-id ="{{item.handPick}}" bindtap="handPick">选为精选</button> 
+         <button wx:if="{{item.handPick == 1}}" data-room-id="{{item.handPick}}" data-r-id ="{{item.handPick}}" bindtap="handPick">取消精选</button> 
         <button data-room-id="{{item.roomId}}" bindtap="deleteRoom">删除房源</button>
       </block>
     
