@@ -131,4 +131,19 @@ Page({
       phoneNumber: that.data.roomData.phoneNumber //仅为示例，并非真实的电话号码
     })
   },
+  onShareAppMessage: function (res) {
+    
+    let url = 'pages/index/index?roomID=' + this.data.roomData.roomId
+    
+    return {
+      title: this.data.roomData.title ,
+      path: url,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  }
 })

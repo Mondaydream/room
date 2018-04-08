@@ -29,7 +29,14 @@ Page({
   },
   
   
-  onLoad: function () {
+  onLoad: function (options) {
+    console.log(options)
+    if (options.roomID) {
+      wx.navigateTo({
+        url: '../roomDetail/roomDetail?roomId=' + options.roomID,
+      })
+    }
+    
    var that = this
    wx.request({
      url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州&pageNumber=0&pageSize=12',
@@ -73,32 +80,32 @@ Page({
     that.setData({
       pageNumber:0
     })
-    wx.request({
-      url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州&pageNumber=0&pageSize=12',
-      success: function (res) {
+    // wx.request({
+    //   url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州&pageNumber=0&pageSize=12',
+    //   success: function (res) {
         
-        for (var i = 0; i < res.data.result.length; i++) {
-          if (res.data.result[i].RentalProperties.length <= 3) {
-            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
-          } else {
-            var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
-            res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
-          }
-          res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
+    //     for (var i = 0; i < res.data.result.length; i++) {
+    //       if (res.data.result[i].RentalProperties.length <= 3) {
+    //         res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
+    //       } else {
+    //         var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
+    //         res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
+    //       }
+    //       res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
 
-        }
-        that.setData({
-          pageData: res.data.result
-        })
+    //     }
+    //     that.setData({
+    //       pageData: res.data.result
+    //     })
 
-        that.setData({
-          pageData: res.data.result
-        })
-      },
-      fail: function (err) {
-        console.log(err)
-      }
-    })
+    //     that.setData({
+    //       pageData: res.data.result
+    //     })
+    //   },
+    //   fail: function (err) {
+    //     console.log(err)
+    //   }
+    // })
   },
   ballClickEvent: function () {
     console.log("点击了下面");
