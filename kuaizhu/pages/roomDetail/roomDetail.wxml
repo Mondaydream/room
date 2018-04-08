@@ -4,7 +4,7 @@
 
 <view class='bgView'> 
 <view class='header'> 
-    <swiper class="swiper"  current="{{swiperCurrent}}" bindchange="swiperChange" autoplay="true" interval="2000" duration="500" >    
+    <swiper class="swiper"  current="{{swiperCurrent}}" bindchange="swiperChange" circular = "true" autoplay="true" interval="2000" duration="500" >    
         <block wx:for="{{roomData.images}}" wx:for-index="index">    
          <swiper-item>    
            <image src="{{item}}" class="slide-image" mode="aspectFill"/>    

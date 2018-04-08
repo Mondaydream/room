@@ -30,7 +30,6 @@ Page({
   
   
   onLoad: function (options) {
-    console.log(options)
     if (options.roomID) {
       wx.navigateTo({
         url: '../roomDetail/roomDetail?roomId=' + options.roomID,
@@ -54,7 +53,6 @@ Page({
 
       }
 
-      console.log("修改后数据：",res.data.result)
        that.setData({
          pageData:res.data.result
        })
@@ -67,7 +65,6 @@ Page({
    
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     
     this.setData({
@@ -108,15 +105,15 @@ Page({
     // })
   },
   ballClickEvent: function () {
-    console.log("点击了下面");
+    // console.log("点击了下面");
   },
   ballClickEventTwo: function () {
-    console.log("点击了上面");
+    // console.log("点击了上面");
   },
 
   powerDrawer: function (e) {
     var that = this
-    console.log('点击了弹窗按钮');
+    // console.log('点击了弹窗按钮');
     var phone = this.data.phone;
     console.log(phone);
     var currentStatu = e.currentTarget.dataset.statu;
