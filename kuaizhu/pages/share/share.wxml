@@ -1,0 +1,6 @@
+<!--share.wxml-->
+<view class="main-content-cotainer"></view>
+<image src="{{avatarURL}}">
+<text></text>
+<image></image>
+
