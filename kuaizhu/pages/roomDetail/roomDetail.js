@@ -14,8 +14,7 @@ Page({
       { url: 'https://z0.muscache.cn/im/pictures/b204c0c3-e551-4479-806f-11a5205d8764.jpg?aki_policy=x_large' },
       { url: 'https://z0.muscache.cn/im/pictures/fa8b3cb1-fe15-46be-82f9-70a58daf422c.jpg?aki_policy=x_large' },
       { url: 'https://z0.muscache.cn/im/pictures/2399b087-6696-4f09-83bd-6fc9031620c9.jpg?aki_policy=x_large' },
-      { url: 'https://z0.muscache.cn/im/pictures/cdfe4926-04d2-40dc-895a-5b3a910207a7.jpg?aki_policy=x_large' },
-
+      { url: 'https://z0.muscache.cn/im/pictures/cdfe4926-04d2-40dc-895a-5b3a910207a7.jpg?aki_policy=x_large' }
     ],
 
     tags: [
@@ -129,6 +128,13 @@ Page({
     var that = this
     wx.makePhoneCall({
       phoneNumber: that.data.roomData.phoneNumber //仅为示例，并非真实的电话号码
+    })
+  },
+  share: function() {
+    var that = this;
+    let url = '../share/share?shareID=' + that.data.roomData.shareID;
+    wx.navigateTo({
+      url: url,
     })
   },
   onShareAppMessage: function (res) {

@@ -333,11 +333,37 @@
   z-index: 1;
 }
 /*添加地址按钮*/
-.address-add {
+.btn-contact {
 	position: fixed;
-	bottom: 0;
+	bottom: 8px;
+  right: 20px;
+  height: 40px;
+	width: 70%;
+  background: linear-gradient(to right, #FF6953 , #FC4C4C);
+  border-radius: 20px;
+}
+.btn-share {
+  position: fixed;
+  bottom: 8px;
+  left: 20px;
+  height: 40px;
+	width: 50px;
+  font-size: 11px;
+  color: #88909F;
+  background: white;
+}
+.btn-container {
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 56px;
 	width: 100%;
-  background: #FF6953;
-  border-radius: 0px;
-  
+  background: white;
+}
+.image-share-icon {
+  position: fixed;
+  bottom: 25px;
+  left: 30px;
+  width: 22px;
+  height: 20px;
 }

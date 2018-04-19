@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    
     "pages/roomDetail/roomDetail",
-    "pages/postHouse/post"
+    "pages/postHouse/post",
+    "pages/share/share"
   ],
   "window": {
     "backgroundTextStyle": "light",
