@@ -56,5 +56,6 @@
 <block>
 <view class="btn-container"></view>
 <button bindtap="share" class="btn-share">分享</button>
+<image class="image-share-icon" src="share-icon.png"></image>
 <button bindtap="add" style='color: white' class="btn-contact">联系对方</button>
 </block>

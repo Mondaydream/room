@@ -347,7 +347,10 @@
   bottom: 8px;
   left: 20px;
   height: 40px;
-	width: 60px;
+	width: 50px;
+  font-size: 11px;
+  color: #88909F;
+  background: white;
 }
 .btn-container {
   position: fixed;
@@ -356,4 +359,11 @@
   height: 56px;
 	width: 100%;
   background: white;
+}
+.image-share-icon {
+  position: fixed;
+  bottom: 25px;
+  left: 30px;
+  width: 22px;
+  height: 20px;
 }

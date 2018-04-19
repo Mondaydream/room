@@ -5,14 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    avatarURL: 'https://www.baidu.com/img/bd_logo1.png?qua=high&where=super',
+    userName: 'x',
+    userQuote: 'y',
+    previewImages: ['https://www.baidu.com/img/bd_logo1.png?qua=high&where=super'],
+    houseTitle: 'text',
+    housePrice: 'text',
+    qrcodeImageURL: 'https://www.baidu.com/img/bd_logo1.png?qua=high&where=super'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var that = this;
+    var shareID = options.shareID;
+
   },
 
   /**

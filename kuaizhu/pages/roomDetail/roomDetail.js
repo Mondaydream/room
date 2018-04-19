@@ -132,7 +132,7 @@ Page({
   },
   share: function() {
     var that = this;
-    let url = 'pages/share/share?shareID=' + this.data.roomData.shareID;
+    let url = '../share/share?shareID=' + that.data.roomData.shareID;
     wx.navigateTo({
       url: url,
     })
