@@ -25,17 +25,27 @@ Page({
     ],
     pageNumber:0,
     jingxuanfangyuan:" 精选房源 ",
+    nickName: "",
+    avatarUrl: "",
+
     
   },
   
   
   onLoad: function (options) {
+
+
+
     if (options.roomID) {
       wx.navigateTo({
         url: '../roomDetail/roomDetail?roomId=' + options.roomID,
       })
     }
-    
+
+    //获取用户openid
+   
+   this.getOpenId()
+
    var that = this
    wx.request({
      url: 'https://www.kzroom.club/v1/city/queryRentRooms?city=广州&pageNumber=0&pageSize=12',
@@ -46,7 +56,6 @@ Page({
           res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
         }else{
           var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
-          console.log("剪切后的数据",tempArr)
           res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
         }
         res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
@@ -300,14 +309,12 @@ Page({
             res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
           } else {
             var tempArr = res.data.result[i].RentalProperties.splice(2, res.data.result[i].RentalProperties.length - 3)
-            console.log("剪切后的数据", tempArr)
             res.data.result[i]["tagString"] = res.data.result[i].RentalProperties.join(" | ")
           }
           res.data.result[i]["timeStr"] = that.getDateDiff(res.data.result[i].releseTime)
 
         }
 
-        console.log("修改后数据：", res.data.result)
         that.setData({
           pageData: res.data.result
         })
@@ -321,6 +328,122 @@ Page({
       }
     })
 
+  },
+
+  getOpenId :function(){
+    var openId = (wx.getStorageSync('openId'))
+    if (openId) {
+      wx.getUserInfo({
+        success: function (res) {
+          that.setData({
+            nickName: res.userInfo.nickName,
+            avatarUrl: res.userInfo.avatarUrl,
+          })
+        },
+        fail: function () {
+          // fail
+          console.log("获取失败！")
+        },
+        complete: function () {
+          // complete
+          console.log("获取用户信息完成！")
+        }
+      })
+    } else {
+      wx.login({
+        success: function (res) {
+         
+          
+          if (res.code) {
+           
+            wx.getUserInfo({
+              withCredentials: true,
+              success: function (res_user) {
+                console.log(res_user)
+                var postData = {
+                  "code": res.code,
+                  "encryptedData": res_user.encryptedData,
+                  "iv": res_user.iv
+                }
+
+                var jsonStr = JSON.stringify(postData)
+                console.log(jsonStr)
+                wx.request({
+                  //后台接口地址
+                  url: 'https://www.kzroom.club/getUnionId',
+                  data: jsonStr,
+                  method: 'POST',
+                  header: {
+                    'content-type': 'application/json'
+                  },
+                  success: function (res) {
+                    // this.globalData.userInfo = JSON.parse(res.data);
+                    console.log(res)
+                    wx.setStorageSync('openId', res.data.openId);
+
+                  }
+                })
+              }, fail: function () {
+                wx.showModal({
+                  title: '警告通知',
+                  content: '您点击了拒绝授权,将无法正常显示个人信息,点击确定重新获取授权。',
+                  success: function (res) {
+                    if (res.confirm) {
+                      wx.openSetting({
+                        success: (res) => {
+                          if (res.authSetting["scope.userInfo"]) {////如果用户重新同意了授权登录
+                            wx.login({
+                              success: function (res_login) {
+                                if (res_login.code) {
+                                  wx.getUserInfo({
+                                    withCredentials: true,
+                                    success: function (res_user) {
+                                      var postData = {
+                                        "code": res.code,
+                                        "encryptedData": res.encryptedData,
+                                        "iv": res.iv
+                                      }
+                                      var jsonStr = JSON.stringify(postData)
+                                      wx.request({
+                                        url: 'https://www.kzroom.club/getUnionId',
+                                        data:jsonStr,
+                                        method: 'POST',
+                                        header: {
+                                          'content-type': 'application/json'
+                                        },
+                                        success: function (res) {
+                                          that.setData({
+                                            nickName: res.data.nickName,
+                                            avatarUrl: res.data.avatarUrl,
+
+                                          })
+                                          wx.setStorageSync('openId', res.data.openId);
+                                        }
+                                      })
+                                    }
+                                  })
+                                }
+                              }
+                            });
+                          }
+                        }, fail: function (res) {
+
+                        }
+                      })
+
+                    }
+                  }
+                })
+              }, complete: function (res) {
+
+
+              }
+            })
+          }
+        }
+      })
+
+    }
   },
 
   getDateDiff : function (dateTimeStamp){
@@ -457,3 +580,5 @@ Page({
    
   }
 })
+
+
