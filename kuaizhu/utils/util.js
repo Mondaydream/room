@@ -35,8 +35,36 @@ function isEmptyObject(e) {
 }
 
 
+
+
+//promise
+var Promise = require('./es6-promise.min.js')
+
+function wxPromisify(fn, scope) {
+  return function (obj = {}) {
+    return new Promise((resolve, reject) => {
+      obj.success = function (res) {
+        resolve(res);
+      }
+      obj.fail = function (res) {
+        reject(res);
+      }
+      if (scope) {
+        //改变this指向
+        var newFn = fn.bind(scope);
+        newFn(obj);
+      } else {
+        fn(obj);
+      }
+    })
+  }
+}
+
 module.exports = {
   formatTime: formatTime,
   json2Form: json2Form,
   isEmptyObject: isEmptyObject,
+  wxPromisify: wxPromisify,
+
 }
+

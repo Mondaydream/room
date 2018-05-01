@@ -95,7 +95,7 @@ Page({
       success: function (data) {
         var encryptedData = data.encryptedData;
         var iv = data.iv;
-
+        
         var userInfo = data.userInfo
         var nickName = userInfo.nickName
         var avatarUrl = userInfo.avatarUrl
@@ -106,6 +106,10 @@ Page({
         that.setData({
           houseOwner:data.userInfo
         })
+        console.log(encryptedData + iv)
+
+
+
       }
     })
   },
@@ -350,7 +354,8 @@ Page({
         }
       }
     })  
-  }
+  },
+  
 })
  
   

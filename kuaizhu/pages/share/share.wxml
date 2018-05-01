@@ -1,5 +1,5 @@
 <!--share.wxml-->
-<view class="page">
+<!-- <view class="page">
   <view class="main-content-cotainer">
     <image src="{{avatarURL}}"></image>
     <text class="user-name">{{userName}}</text>
@@ -16,7 +16,9 @@
     <image class="QRCode-image" src='{{qrcodeImageURL}}'></image>
     <text>长按识别小程序，查看房源详情</text>
   </view>
-</view>
+</view> -->
+
+<canvas canvas-id="shareCanvas" class='bg'></canvas>
 
 
 
