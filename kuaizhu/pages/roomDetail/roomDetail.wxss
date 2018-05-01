@@ -335,22 +335,23 @@
 /*添加地址按钮*/
 .btn-contact {
 	position: fixed;
-	bottom: 8px;
+	bottom: 12rpx;
   right: 20px;
-  height: 40px;
+  height: 80rpx;
 	width: 70%;
   background: linear-gradient(to right, #FF6953 , #FC4C4C);
-  border-radius: 20px;
+  border-radius: 40rpx;
 }
 .btn-share {
   position: fixed;
   bottom: 8px;
   left: 20px;
-  height: 40px;
+  height: 80rpx;
 	width: 50px;
   font-size: 11px;
   color: #88909F;
   background: white;
+ 
 }
 .btn-container {
   position: fixed;
@@ -362,8 +363,8 @@
 }
 .image-share-icon {
   position: fixed;
-  bottom: 25px;
-  left: 30px;
-  width: 22px;
-  height: 20px;
+  left: 80rpx;
+  bottom: 8rpx;
+  width: 46rpx;
+  height: 74rpx;
 }

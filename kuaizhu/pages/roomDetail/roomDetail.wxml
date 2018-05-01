@@ -55,7 +55,8 @@
 
 <block>
 <view class="btn-container"></view>
-<button bindtap="share" class="btn-share">分享</button>
-<image class="image-share-icon" src="share-icon.png"></image>
+
+<image class="image-share-icon" src="https://kuaizhu.oss-cn-shenzhen.aliyuncs.com/share.png" bindtap='share'></image>
 <button bindtap="add" style='color: white' class="btn-contact">联系对方</button>
 </block>
+
